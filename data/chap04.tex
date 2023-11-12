@@ -266,34 +266,33 @@ The function uses M-ary quantization to represent the input samples with a speci
   \EndFunction
   \end{algorithmic}
   \end{algorithm}
-The Reconciliation algorithm is commonly used for solving sparse linear regression problems, where the $l1$ regularization encourages sparsity in the solution. The function iteratively refines the solution by updating the active set and adjusting the solution vector based on the direction and step size. The algorithm terminates when the convergence criterion is satisfied or after a specified number of iterations.
-The algorithm then computes the active set, which is the set of indices of the elements in the solution that have the largest residual correlations. The active set is computed by finding the elements in the solution that have a residual correlation that is within $1e-5$ of the maximum residual correlation.
+The Reconciliation algorithm is commonly used for solving sparse linear regression problems, where the \(l1\) regularization encourages sparsity in the solution. The function iteratively refines the solution by updating the active set and adjusting the solution vector based on the direction and step size. The algorithm terminates when the convergence criterion is satisfied or after a specified number of iterations.
+The algorithm then computes the active set, which is the set of indices of the elements in the solution that have the largest residual correlations. The active set is computed by finding the elements in the solution that have a residual correlation that is within \(1e^{-5}\) of the maximum residual correlation.
 After Reconciliation, performs computing the bitwise exclusive-Or (XOR) of two binary arrays, \textbf{bits\_a} (Bits of Alice after Quantization) and mismatch, and then casting the result to an integer array. This is a useful operation for error correction, as it can be used to recover the original bits from a corrupted set of bits, provided that the number of errors is less than half the number of bits. 
   \[
   \text{{bits\_recover}} = \text{{np.logical\_xor}}(\textbf{\framebox[1.1\width]{{bits\_a}}}, \text{{mismatch}}.\text{{reshape}}(\text{{len}}(\text{{mismatch}}))).\text{{astype(int)}}
   \]
-\textbf{Key Extraction:} Alice and Bob extract a secure key from the reconciled bit strings using a shared secret key or a one-way hash function. Considering that the computing power of LoRa nodes is limited, especially in the case of IoT nodes without AES hardware acceleration, Chacha20(RFC 7539)\cite{rfc7539}, a symmetric encryption algorithm that is more suitable for embedded hardware, is chosen here. ChaCha20-Poly1305 has a simpler process than the traditional AES algorithm and has achieved better performance such that in the absence of a dedicated accelerator\cite{7507408,7927078}.
-\begin{algorithm}
-    \caption{ChaCha20-Poly1305 Encryption}
-    \begin{algorithmic}[1]
-    \Function{ChaCha20Poly1305Encrypt}{$\text{plaintext}, \text{key}, \text{nonce}$}
-        \State $\text{ciphertext} \gets \text{ChaCha20}(\text{plaintext}, \text{key}, \text{nonce})$
-        \State $\text{tag} \gets \text{Poly1305}(\text{ciphertext}, \text{key})$
-        \State \Return $\text{ciphertext}, \text{tag}$
-    \EndFunction
-    \end{algorithmic}
-\end{algorithm}
-    
-    \begin{algorithm}
-    \caption{ChaCha20-Poly1305 Decryption}
-    \begin{algorithmic}[1]
-    \Function{ChaCha20Poly1305Decrypt}{$\text{ciphertext}, \text{key}, \text{nonce}, \text{tag}$}
-        \State $\text{plaintext} \gets \text{ChaCha20}(\text{ciphertext}, \text{key}, \text{nonce})$
-        \State $\text{computedTag} \gets \text{Poly1305}(\text{ciphertext}, \text{key})$
-        \If{$\text{computedTag} \neq \text{tag}$}
-            \State \textbf{throw} AuthenticationError
-        \EndIf
-        \State \Return $\text{plaintext}$
-    \EndFunction
-    \end{algorithmic}
-\end{algorithm}
+\textbf{Key Extraction:} Alice and Bob extract a secure key from the reconciled bit strings using a shared secret key or a one-way hash function. Considering that the computing power of LoRa nodes is limited, especially in the case of IoT nodes without AES hardware acceleration, ChaCha20(RFC 7539)\cite{rfc7539}, a symmetric encryption algorithm that is more suitable for embedded hardware, is chosen here. ChaCha20 has a simpler process than the traditional AES algorithm and has achieved better performance such that in the absence of a dedicated accelerator\cite{7507408,7927078}.
+\begin{table}
+    \centering
+    \caption{Key Differences Between ChaCha20 and AES-128}
+    \begin{tabular}{p{0.15\linewidth}p{0.35\linewidth}p{0.35\linewidth}}
+      \toprule
+      Feature&ChaCha20&AES-128\\
+      \midrule
+      Type&Stream cipher&Block cipher\\
+      Security&More resistant to cache-timing attacks, designed to be more secure against future attacks&Considered to be secure\\
+      Speed&Generally faster in software implementations&Generally slower in software implementations\\
+      Hardware Accelerator&Less widely supported than AES-128&More widely supported than ChaCha20    \\
+      \bottomrule
+    \end{tabular}
+    \label{tab:three-line}
+\end{table}
+ChaCha20 and AES-128 are both symmetric encryption algorithms, meaning they use the same key to encrypt and decrypt data. In physical layer key generation, these algorithms can be used in Key Extraction and Privacy Amplification. As shown in Table 4.1, ChaCha20 is generally faster than AES-128 in software implementations. This is because ChaCha20 is a stream cipher, while AES-128 is a block cipher. Stream ciphers are more efficient to implement in software because they can encrypt and decrypt data on a byte-by-byte basis, while block ciphers need to operate on blocks of data at a time.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig4-2.png}
+    \caption{Performance Comparison Between ChaCha20 and AES-128}
+    \label{fig:4-2}
+\end{figure}
+The performance test comparison between ChaCha20 and AES-128, shown as Figure 4.2 in a embedded router system OpenWRT running on the MIPS1004Kc SOC indicates it.
