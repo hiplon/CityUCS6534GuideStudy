@@ -1,0 +1,126 @@
+\begin{thebibliography}{18}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax\else
+  \urlstyle{same}\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \DeclareUrlCommand\doi{\urlstyle{rm}}
+  \def\eprint#1#2{#2}
+\else
+  \def\doi#1{\href{https://doi.org/#1}{\nolinkurl{#1}}}
+  \let\eprint\href
+\fi
+
+\bibitem[{Gartner Research}(2023)]{gartnerresearchiot}
+{Gartner Research}.
+\newblock Cross-industry insight: Iot market opportunities and top spend use cases\allowbreak[EB/OL].
+\newblock \allowbreak(2023-06-08)\allowbreak[2023-06-08].
+\newblock \url{https://www.gartner.com/en/documents/4432199}.
+
+\bibitem[{Ministry of Industry and Information Technology}(2016)]{iot13th5yr}
+{Ministry of Industry and Information Technology}.
+\newblock Iot 13th five-year plan (2016-2020) years\allowbreak[S].
+\newblock Beijing: The 13th five-year plan, 2016.
+
+\bibitem[Zeng(2015)]{7120014}
+Zeng K.
+\newblock Physical layer key generation in wireless networks: challenges and opportunities\allowbreak[J/OL].
+\newblock IEEE Communications Magazine, 2015, 53\allowbreak (6): 33-39.
+\newblock DOI: \doi{10.1109/MCOM.2015.7120014}.
+
+\bibitem[Anciaux(2018)]{iotfactorylpwan}
+Anciaux L.
+\newblock {LPWAN} - 5 letters in the heart of the iot revolution\allowbreak[N/OL].
+\newblock IOT Factory, 2018-01-19\allowbreak[2018-01-19].
+\newblock \url{https://iotfactory.eu/lpwan-5-letters-in-the-heart-of-the-iot-revolution/}.
+
+\bibitem[{LoRa Alliance}(2022)]{lorawanpara}
+{LoRa Alliance}.
+\newblock {LoRaWAN® Regional Parameters RP002-1.0.2}\allowbreak[S].
+\newblock Fremont, CA: {LoRa Alliance}, 2022.
+
+\bibitem[Xu et~al.(2023)Xu, Tong, Xie, and Wang]{10.1145/3546869}
+Xu Z, Tong S, Xie P, et~al.
+\newblock From demodulation to decoding: Toward complete lora phy understanding and implementation\allowbreak[J/OL].
+\newblock ACM Trans. Sen. Netw., 2023, 18\allowbreak (4).
+\newblock \url{https://doi.org/10.1145/3546869}.
+
+\bibitem[{The Things Netowrk}(2022)]{rssiandsnrfigure}
+{The Things Netowrk}.
+\newblock {RSSI and SNR}\allowbreak[EB/OL].
+\newblock 2022.
+\newblock \url{https://www.thethingsnetwork.org/docs/lorawan/rssi-and-snr/}.
+
+\bibitem[Peng et~al.(2014)Peng, Alexandropoulos, Wang, Li, and Ha]{7054386}
+Peng Y, Alexandropoulos G~C, Wang P, et~al.
+\newblock Poster: Secret key generation from cfr for ofdm tdd systems over fading channels\allowbreak[C/OL]//\allowbreak
+9th International Conference on Communications and Networking in China.
+\newblock 2014: 660-661.
+\newblock DOI: \doi{10.1109/CHINACOM.2014.7054386}.
+
+\bibitem[Luo et~al.(2023)Luo, Garg, and Ratnarajah]{10158732}
+Luo H, Garg N, Ratnarajah T.
+\newblock A channel frequency response-based secret key generation scheme in in-band full-duplex mimo-ofdm systems\allowbreak[J/OL].
+\newblock IEEE Journal on Selected Areas in Communications, 2023, 41\allowbreak (9): 2951-2965.
+\newblock DOI: \doi{10.1109/JSAC.2023.3287610}.
+
+\bibitem[Jana et~al.(2009)Jana, Premnath, Clark, Kasera, Patwari, and Krishnamurthy]{10.1145/1614320.1614356}
+Jana S, Premnath S~N, Clark M, et~al.
+\newblock On the effectiveness of secret key extraction from wireless signal strength in real environments\allowbreak[C/OL]//\allowbreak
+MobiCom '09: Proceedings of the 15th Annual International Conference on Mobile Computing and Networking.
+\newblock New York, NY, USA: Association for Computing Machinery, 2009: 321–332.
+\newblock \url{https://doi.org/10.1145/1614320.1614356}.
+
+\bibitem[Xu et~al.(2019)Xu, Jha, and Hu]{8580375}
+Xu W, Jha S, Hu W.
+\newblock Lora-key: Secure key generation system for lora-based network\allowbreak[J/OL].
+\newblock IEEE Internet of Things Journal, 2019, 6\allowbreak (4): 6404-6416.
+\newblock DOI: \doi{10.1109/JIOT.2018.2888553}.
+
+\bibitem[Al-Moliki et~al.(2019)Al-Moliki, Alresheedi, and Al-Harthi]{https://doi.org/10.1049/iet-opt.2018.5072}
+Al-Moliki Y~M, Alresheedi M~T, Al-Harthi Y.
+\newblock Chaos-based physical-layer encryption for ofdm-based vlc schemes with robustness against known/chosen plaintext attacks\allowbreak[J/OL].
+\newblock IET Optoelectronics, 2019, 13\allowbreak (3): 124-133.
+\newblock \url{https://ietresearch.onlinelibrary.wiley.com/doi/abs/10.1049/iet-opt.2018.5072}.
+\newblock DOI: \doi{https://doi.org/10.1049/iet-opt.2018.5072}.
+
+\bibitem[Zhang et~al.(2022)Zhang, Li, Zhang, Hu, Hou, and Xiao]{9526766}
+Zhang X, Li G, Zhang J, et~al.
+\newblock Deep-learning-based physical-layer secret key generation for fdd systems\allowbreak[J/OL].
+\newblock IEEE Internet of Things Journal, 2022, 9\allowbreak (8): 6081-6094.
+\newblock DOI: \doi{10.1109/JIOT.2021.3109272}.
+
+\bibitem[Botero-valencia et~al.(2019)Botero-valencia, Castano-Londono, Marquez-Viloria, and Rico-Garcia]{8515030}
+Botero-valencia J, Castano-Londono L, Marquez-Viloria D, et~al.
+\newblock Data reduction in a low-cost environmental monitoring system based on lora for wsn\allowbreak[J/OL].
+\newblock IEEE Internet of Things Journal, 2019, 6\allowbreak (2): 3024-3030.
+\newblock DOI: \doi{10.1109/JIOT.2018.2878528}.
+
+\bibitem[Savitzky et~al.(1964)Savitzky and Golay]{doi:10.1021/ac60214a047}
+Savitzky A, Golay M~J~E.
+\newblock Smoothing and differentiation of data by simplified least squares procedures.\allowbreak[J/OL].
+\newblock Analytical Chemistry, 1964, 36\allowbreak (8): 1627-1639.
+\newblock \url{https://doi.org/10.1021/ac60214a047}.
+
+\bibitem[Nir et~al.(2015)Nir and Langley]{rfc7539}
+Nir Y, Langley A.
+\newblock Request for comments: number 7539\quad {ChaCha20 and Poly1305 for IETF Protocols}\allowbreak[M/OL].
+\newblock RFC Editor, 2015.
+\newblock \url{https://www.rfc-editor.org/info/rfc7539}.
+\newblock DOI: \doi{10.17487/RFC7539}.
+
+\bibitem[Velea et~al.(2016)Velea, Gurzău, Mărgărit, Bica, and Patriciu]{7507408}
+Velea R, Gurzău F, Mărgărit L, et~al.
+\newblock Performance of parallel chacha20 stream cipher\allowbreak[C/OL]//\allowbreak
+2016 IEEE 11th International Symposium on Applied Computational Intelligence and Informatics (SACI).
+\newblock 2016: 391-396.
+\newblock DOI: \doi{10.1109/SACI.2016.7507408}.
+
+\bibitem[De~Santis et~al.(2017)De~Santis, Schauer, and Sigl]{7927078}
+De~Santis F, Schauer A, Sigl G.
+\newblock Chacha20-poly1305 authenticated encryption for high-speed embedded iot applications\allowbreak[C/OL]//\allowbreak
+Design, Automation \& Test in Europe Conference \& Exhibition (DATE), 2017.
+\newblock 2017: 692-697.
+\newblock DOI: \doi{10.23919/DATE.2017.7927078}.
+
+\end{thebibliography}
