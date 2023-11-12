@@ -143,14 +143,11 @@ After the LoRa end node setup, we can process the physical layer key generation 
 \textbf{Sampling:} Alice and Bob exchange a number of probe and response packets to sample the RSSI channel by the mentioned in 4.2 LoRa End Nodes Modeling and Algorithm.
 
 \textbf{Signal processing:} Alice and Bob apply outlier detection and Savitzky–Golay filter, which is mentioned in 3.2.5, to reduce the discrepancies caused by the environmental noise. They then use linear interpolation to construct missing data points. The Savitzky–Golay algorithm is a method for smoothing and differentiating data. Given a set of data points \(y_i\) at positions \(x_i\) for \(i = 1, 2, \ldots, n\), the smoothed data \(\hat{y}_i\) is computed using the convolution operation:
-
-\[
+\begin{equation}
 \hat{y}_i = \sum_{j = -k}^{k} c_j \cdot y_{i+j}
-\]
-
+\end{equation}
 where \(k\) is the half-width of the smoothing window and \(c_j\) are the Savitzky–Golay coefficients. The coefficients can be computed by solving the linear system of equations:
-
-\[
+\begin{equation}
 \begin{bmatrix}
   S_0 & S_1 & \ldots & S_{2k} \\
   S_1 & S_2 & \ldots & S_{2k+1} \\
@@ -170,8 +167,7 @@ where \(k\) is the half-width of the smoothing window and \(c_j\) are the Savitz
   \vdots \\
   1
 \end{bmatrix}
-\]
-
+\end{equation}
 where \(S_j = \sum_{i=1}^{n} x_i^j\). The solution to this system provides the coefficients \(c_j\) for the convolution operation.
 
 \textbf{Multilevel Quantization:} Alice and Bob convert the RSSI values to bit strings by employing multilevel quantization technique.
@@ -272,8 +268,32 @@ The function uses M-ary quantization to represent the input samples with a speci
   \end{algorithm}
 The Reconciliation algorithm is commonly used for solving sparse linear regression problems, where the $l1$ regularization encourages sparsity in the solution. The function iteratively refines the solution by updating the active set and adjusting the solution vector based on the direction and step size. The algorithm terminates when the convergence criterion is satisfied or after a specified number of iterations.
 The algorithm then computes the active set, which is the set of indices of the elements in the solution that have the largest residual correlations. The active set is computed by finding the elements in the solution that have a residual correlation that is within $1e-5$ of the maximum residual correlation.
-After Reconciliation, performs computing the bitwise exclusive-Or (XOR) of two binary arrays, bits\_a (Bits of Alice after Quantization) and mismatch, and then casting the result to an integer array. This is a useful operation for error correction, as it can be used to recover the original bits from a corrupted set of bits, provided that the number of errors is less than half the number of bits. 
+After Reconciliation, performs computing the bitwise exclusive-Or (XOR) of two binary arrays, \textbf{bits\_a} (Bits of Alice after Quantization) and mismatch, and then casting the result to an integer array. This is a useful operation for error correction, as it can be used to recover the original bits from a corrupted set of bits, provided that the number of errors is less than half the number of bits. 
   \[
-  \text{{bits\_recover}} = \text{{np.logical\_xor}}(\text{\framebox[1.1\width]{{bits\_a}}}, \text{{mismatch}}.\text{{reshape}}(\text{{len}}(\text{{mismatch}}))).\text{{astype(int)}}
+  \text{{bits\_recover}} = \text{{np.logical\_xor}}(\textbf{\framebox[1.1\width]{{bits\_a}}}, \text{{mismatch}}.\text{{reshape}}(\text{{len}}(\text{{mismatch}}))).\text{{astype(int)}}
   \]
-\textbf{Key Extraction:} Alice and Bob extract a secure key from the reconciled bit strings using a shared secret key or a one-way hash function. Considering that the computing power of LoRa nodes is limited, especially in the case of IoT nodes without AES hardware acceleration, Chacha20(RFC 7539)\cite{rfc7539}, a symmetric encryption algorithm that is more suitable for embedded hardware, is chosen here. Chacha20 has a simpler process than the traditional AES algorithm and has achieved better performance such that in the absence of a dedicated accelerator\cite{7507408,7927078}.
+\textbf{Key Extraction:} Alice and Bob extract a secure key from the reconciled bit strings using a shared secret key or a one-way hash function. Considering that the computing power of LoRa nodes is limited, especially in the case of IoT nodes without AES hardware acceleration, Chacha20(RFC 7539)\cite{rfc7539}, a symmetric encryption algorithm that is more suitable for embedded hardware, is chosen here. ChaCha20-Poly1305 has a simpler process than the traditional AES algorithm and has achieved better performance such that in the absence of a dedicated accelerator\cite{7507408,7927078}.
+\begin{algorithm}
+    \caption{ChaCha20-Poly1305 Encryption}
+    \begin{algorithmic}[1]
+    \Function{ChaCha20Poly1305Encrypt}{$\text{plaintext}, \text{key}, \text{nonce}$}
+        \State $\text{ciphertext} \gets \text{ChaCha20}(\text{plaintext}, \text{key}, \text{nonce})$
+        \State $\text{tag} \gets \text{Poly1305}(\text{ciphertext}, \text{key})$
+        \State \Return $\text{ciphertext}, \text{tag}$
+    \EndFunction
+    \end{algorithmic}
+\end{algorithm}
+    
+    \begin{algorithm}
+    \caption{ChaCha20-Poly1305 Decryption}
+    \begin{algorithmic}[1]
+    \Function{ChaCha20Poly1305Decrypt}{$\text{ciphertext}, \text{key}, \text{nonce}, \text{tag}$}
+        \State $\text{plaintext} \gets \text{ChaCha20}(\text{ciphertext}, \text{key}, \text{nonce})$
+        \State $\text{computedTag} \gets \text{Poly1305}(\text{ciphertext}, \text{key})$
+        \If{$\text{computedTag} \neq \text{tag}$}
+            \State \textbf{throw} AuthenticationError
+        \EndIf
+        \State \Return $\text{plaintext}$
+    \EndFunction
+    \end{algorithmic}
+\end{algorithm}
