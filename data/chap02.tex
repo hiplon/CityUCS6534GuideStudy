@@ -2,29 +2,32 @@
 
 \chapter{Related Work}
 According to the previous research, some methods of key generation based on the physical layer of the LoRa communication protocol were proposed. However, Physical layer key generation for LoRa is still under development, but it has the potential to revolutionize the security of LoRa-based networks. It can be used to secure a wide range of applications, including smart cities, industrial automation, and the Internet of Things.
+
 Physical layer key generation for LoRa is a promising technique for establishing secure communication links in LoRa-based networks. Physical layer key generation exploits the randomness and reciprocity of the LoRa channel to extract a secret key shared by the communicating devices. This key can then be used to encrypt and decrypt their communication, ensuring confidentiality and integrity.
 
 \section{Theoretical Foundations}
 
 \subsection{Physical Layer Key Generation}
-Physical layer key generation is the way to generate a shared secret key between wireless devices by exploiting the reciprocity of the random fading channel, in which wireless devices measure highly correlated wireless channel characteristics (e.g., channel impulse responses or received signal strengths) and use them as shared random sources to generate a shared key. In theory, in a rich multipath scattering environment, a passive attacker who is more than a half-wavelength away from the legitimate users will obtain uncorrelated channel measurements and thus cannot infer much information about the generated key. The physical layer key generation mechanisms do not require expensive computation and have the potential to achieve information-theoretic security in the sense that the secrecy of the generated key is not dependent on the hardness of a computational problem but relies on the physical laws of the wireless fading channels.[3] 
+Physical layer key generation involves creating a shared secret key between wireless devices by exploiting the reciprocity of the random fading channel. In this process, wireless devices measure highly correlated characteristics of the wireless channel, such as channel impulse responses or received signal strengths, and utilize them as shared random sources for key generation. Theoretically, in a rich multipath scattering environment, a passive attacker positioned more than a half-wavelength away from legitimate users will obtain uncorrelated channel measurements, limiting their ability to infer information about the generated key. Notably, physical layer key generation mechanisms eschew the need for computationally intensive processes and hold the potential to achieve information-theoretic security. This security is distinct in that the secrecy of the generated key is not contingent on the difficulty of a computational problem but rather relies on the inherent physical laws governing wireless fading channels \cite{7120014}.
+
 Generally, physical layer key generation applies the following five steps to generate a key: channel probing, randomness extraction, quantization, information reconciliation, and privacy amplification, illustrated in Figure 2.1.
 \begin{figure}
   \centering
   \includegraphics[width=0.6\linewidth]{fig2-1.png}
-  \caption{Secret key generation model[3]}
+  \caption{Secret key generation model\cite{7120014}}
   \label{fig:2-1}
 \end{figure}
 
 \subsection{LoRa Physical Layer Protocol}
-LoRa adopts the Chirp Spread Spectrum (CSS) modulation mechanism, which provides anti-interference and long-range communication capability. As shown in Figure 2.2(a) and (b), a base symbol in LoRa physical layer protocol (PHY) is a chirp with frequency linearly increasing with time. The start frequency (fstart ) of a symbol represents the encoded information. A LoRa symbol has two segments with a sharp frequency drop, as shown in Figure 2-2(c).
+LoRa embraces the Chirp Spread Spectrum (CSS) modulation mechanism, offering both anti-interference capabilities and the ability for long-range communication. In the LoRa physical layer protocol (PHY), illustrated in Figure 2.2(a) and (b), a fundamental symbol consists of a chirp characterized by a linear increase in frequency over time. The encoded information is represented by the start frequency \(f_{start}\) of a symbol. Notably, a LoRa symbol comprises two segments featuring a distinct sharp frequency drop, as depicted in Figure 2-2(c).
 \begin{figure}
   \centering
   \includegraphics[width=0.7\linewidth]{fig2-2.png}
   \caption{(a) Real part of a base up-chirp symbol. (b) Base up-chirp symbol. (c) Shifted symbol. (d) Complete procedure of LoRa PHY\cite{10.1145/3546869}}
   \label{fig:2-2}
 \end{figure}
-And the RSSI (Received Signal Strength Indicator) is a relative measurement that helps us determine if the received signal is strong enough to get a good wireless connection from the transmitter. Since LoR supports bi-directional communication, The RSSI is an important measurement for both gateways and end devices. And RSSI is measured in dBm and its value is a negative form. The closer the RSSI value is to zero, the received signal is stronger, the good examples for positive and negative have shown in Figure 2.3 (a) and (b)\cite{rssiandsnrfigure}. And the following factors mainly influence the RSSI: Path loss, Antenna gain, Cable/connector loss.
+
+The Received Signal Strength Indicator (RSSI) serves as a relative measurement aiding in the assessment of whether the received signal is sufficiently robust for establishing a reliable wireless connection from the transmitter. Given LoRa's support for bi-directional communication, RSSI holds significance for both gateways and end devices. RSSI is quantified in dBm, with its values presented in negative form. A proximity to zero in the RSSI value indicates a stronger received signal, as exemplified in positive and negative instances in Figure 2.3 (a) and (b) \cite{rssiandsnrfigure}. Several factors predominantly influence RSSI, including path loss, antenna gain, and cable/connector loss.
 \begin{figure}
   \centering
   \includegraphics[width=0.6\linewidth]{fig2-3.png}
@@ -43,7 +46,8 @@ and then generate the secret key
   K_{U}  = \left [ K_{U}({(1)})K_{U}{(2)} ...K_{U}({2T_{b}}) \right ]
 \end{equation} 
 
-The CFR is an unique characteristic of the LoRa channel that depends on the distance, orientation, and other environmental factors. By estimating the CFR at both ends of the communication link, the devices can generate a secret key that is shared only between them.
+The CFR is an unique characteristic of the LoRa channel that depends on the distance, orientation, and other environmental factors. By estimating the CFR at both ends of the communication link, the devices can generate a secret key that is shared between them.
+
 \subsection{RSSI-Based Physical Layer Key Generation}
 Another approach to physical layer key generation for LoRa is to use the received signal strength indicator (RSSI). The RSSI is a measure of the strength of the received signal. S. Jana et al. evaluated the effectiveness of secret key extraction for private communication between two wireless devices from the received signal strength variations on the wireless channel between the two devices\cite{10.1145/1614320.1614356}. After that, W. Xu et al. employed a number of signal processing techniques to improve key generation rate significantly and proposed a novel compressive sensing-based reconciliation framework to reduce the mismatch rate\cite{8580375}. 
 \begin{equation} y = y_{\mathrm{ Bob}}-y_{\mathrm{ Alice}}= A \left ({K_{\mathrm{ Bob}}-K_{\mathrm{ Alice}}}\right) + e= A x +e \end{equation} 
@@ -70,7 +74,7 @@ Firstly, chaos theory for physical layer key generation in wireless networks has
 
 Secondly, using quantum-based principles for physical layer key distribution in wireless networks has several strengths and weaknesses. On the one hand, quantum keys ensure that the key is truly random and cannot be predicted or intercepted by an adversary, providing high security and randomness. This approach is auspicious for ensuring secure communication in wireless networks. However, on the other hand, the quantum-based is typically designed for optical fiber or free-space optical communication, not for RF wireless communication like LoRa. The use of quantum mechanics principles may be challenging in practical implementation. Generating quantum keys requires using specialized quantum devices and technologies that may not be widely available or practical for resource-constrained environments. Additionally, quantum communication is weaker to practical imperfections than classical communication, making it difficult to ensure consistent and reliable key distribution under practical conditions. 
 
-Thirdly, the Deep-learning-based method offers promising security and key establishment advantages without pre-shared secrets. However, it also faces challenges related to data quality, model vulnerabilities, and resource constraints. It is not a standard or suitable choice for LoRa technology due to resource constraints, data availability, real-time requirements, complexity, and the presence of established security measures within the LoR protocol. Implementing Deep-Learning-Based LoRa networks would require overcoming these challenges and aligning with the specific requirements and limitations of LoRa technology.
+Thirdly, the Deep-learning-based method offers promising security and key establishment advantages without pre-shared secrets. However, it also faces challenges related to data quality, model vulnerabilities, and resource constraints. It is not a standard or suitable choice for LoRa technology due to resource constraints, data availability, real-time requirements, complexity, and the presence of established security measures within the LoRa protocol. Implementing Deep-Learning-Based LoRa networks would require overcoming these challenges and aligning with the specific requirements and limitations in LoRa embedded end nodes.
 
 Such three methods fundamentally differ in operating principles, resource requirements, environmental sensitivity, standardization, and security considerations. Typically, the hardware performance of LoRa nodes, including the CPU and memory specifications limitation, is designed for Low-Power and Battery-Operated, which means they are not providing such calculation performance.
 

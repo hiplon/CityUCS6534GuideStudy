@@ -4,15 +4,13 @@
 
 \section{Project Overview}
 In this project, I am supposed to mainly implement each LoRa node hardware with a programmable Arduino shield and a Dragino’s LoRa expansion board for Arduino and then program the communication protocol with the Arduino IDE software with the LoRa KIT. Including the following:
-
-The implementation of LoRa nodes’ communication, such as signal sending and receiving, coding and decoding,
-
-The extraction and analysis of the physical layer information between the communication process,
-
-The implementation of the LoRa key generation and the test on it.
+\begin{itemize}
+\item The implementation of LoRa nodes’ communication, such as signal sending and receiving, coding and decoding,
+\item The extraction and analysis of the physical layer information between the communication process,
+\item The implementation of the LoRa key generation and the test on it.
+\end{itemize}
 
 \section{Methodology}
-
 \subsection{LoRa Physical Layer Emulation and Analyst}
 Before the design and development in real vibe, the understanding and simulation of the LoRa physical layer could be significant since it has its characteristic, which is different from the standard communication protocol.
 The LoRaPHY KIT is for LoRa Physical Protocol emulation\cite{10.1145/3546869}. Through this KIT, the payload of LoRa can be simulated, especially, and the encryption information can be analyzed and visualized before and after.
@@ -24,9 +22,9 @@ The LoRaPHY KIT is for LoRa Physical Protocol emulation\cite{10.1145/3546869}. T
 \end{figure}
 
 \subsection{Arduino Shield featuring LoRa technology}
-Typically, LoRa uses SX127x chipset, as shown as Fig 3-2, by Semtech, and an Arduino Shield features LoRa technology based on an Open source library. This shield allows users to send data and reach extremely long ranges at low data rates. It provides ultra-long-range spread spectrum communication and high interference immunity while minimizing current consumption. It is on the Semtech SX1276/SX1278 chip, and it targets professional wireless sensor network applications such as irrigation systems, smart metering, smart cities, and building automation.
+In the realm of wireless communication, LoRa commonly employs the SX127x chipset, depicted in Fig 3-2 and manufactured by Semtech. An Arduino Shield, incorporating LoRa technology through an open-source library, serves as a practical manifestation. This shield facilitates the transmission of data over extensive distances at reduced data rates, harnessing ultra-long-range spread spectrum communication. Notably utilizing the Semtech SX1276/SX1278 chip, it is meticulously designed for applications in professional wireless sensor networks. These applications span diverse domains, including but not limited to irrigation systems, smart metering, smart cities, and building automation.
 
-Moreover, using the SX127x LoRa technique, the shield can achieve a sensitivity of over -148dBm using a low-cost crystal and bill of materials. The high sensitivity combined with the integrated +20 dBm power amplifier yields an industry-leading link budget, making it optimal for any application requiring range or robustness.
+Furthermore, by leveraging the SX127x LoRa technique, the shield attains an impressive sensitivity exceeding -148dBm through the incorporation of a cost-effective crystal and bill of materials. This heightened sensitivity, complemented by the integrated +20 dBm power amplifier, results in an unparalleled link budget within the industry. This distinctive feature renders the shield exceptionally well-suited for applications demanding extended range or robust performance.
 
 By using these components, the LoRa communication protocol can be well physically implemented and is a powerful and adaptable tool that can support the realization of the project.
 \begin{figure}

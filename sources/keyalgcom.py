@@ -9,12 +9,10 @@ import matplotlib_inline   # setup output image format
 matplotlib_inline.backend_inline.set_matplotlib_formats('retina')
 import matplotlib.pyplot as plt
 plt.rcParams['figure.dpi'] = 300  # display larger images
-import matplotlib
-import matplotlib.dates as mdates
+
 from numpy import *
 from sklearn import *
-from scipy import stats
-from mpl_toolkits.mplot3d import Axes3D
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
