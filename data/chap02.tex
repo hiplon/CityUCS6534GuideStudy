@@ -37,11 +37,11 @@ The Received Signal Strength Indicator (RSSI) serves as a relative measurement a
 
 \section{Existing Solutions}
 \subsection{CFR-Based Physical Layer Key Generation}
-One common approach to Physical layer key generation for LoRa is to use the fine-grained channel frequency response (CFR). Y. Peng et al. proposed a secret key generation method from CFR for OFDM TDD systems\cite{7054386}. Moreover, H. Luo et al. proposed a Channel Frequency Response-Based Secret Key Generation Scheme in In-Band Full-Duplex MIMO-OFDM Systems\cite{10158732}. When receiving \(I_{MS}\), both BS and MS construct a CFR estimate vector at the agreed subcarrier index set \(I_{MS}\) as
+One common approach to Physical layer key generation for LoRa is to use the fine-grained channel frequency response (CFR). Y. Peng et al. proposed a secret key generation method from CFR for OFDM TDD systems\cite{7054386}. Moreover, H. Luo et al. proposed a Channel Frequency Response-Based Secret Key Generation Scheme in In-Band Full-Duplex MIMO-OFDM Systems\cite{10158732}. When receiving \(I_{MS}\), both BS and MS construct a CFR estimate vector at the agreed subcarrier index set \(I_{MS}\) as:
 \begin{equation} 
   \hat{H}_{U}(I_{MS})   = \left [ \hat{H}_{U}(f_{(1)})\hat{H}_{U}(f_{(2)}) ...\hat{H}_{U}(f_{1(T_{b})}) \right ], where\ u\in \left \{ BS, MS  \right \}   
 \end{equation} 
-and then generate the secret key
+and then generate the secret key by:
 \begin{equation} 
   K_{U}  = \left [ K_{U}({(1)})K_{U}{(2)} ...K_{U}({2T_{b}}) \right ]
 \end{equation} 
