@@ -15,6 +15,7 @@ In addition, since RSSI is mainly affected by signal strength, in the real world
   \caption{Communication Architecture}
   \label{fig:4-1}
 \end{figure}
+
 As shown in the figure 4-1, after \(n\) interactions, \(n\) pairs of RSSI values can be obtained. Then, through a certain algorithm, the \(n\) pairs of RSSI values can be modulated and used as factors to generate a key. In this way, the two nodes can obtain a common physical layer communication key. 
 
 However, in actual use, due to interference from the actual environment, such as physical obstruction, channel blocking, and frequency band interference, the LoRa communication packets cannot always be received as expected. In particular, due to long-distance transmission, LoRa physical layer messages are not reliable transmissions, so packet loss needs to be considered. In addition, according to this communication model, the biggest challenge to generating a pair of RSSI is still Bob's reply message. This is because Bob's reply is based on the premise of receiving Alice's message, but Alice may not be able to receive Bob's reply.
