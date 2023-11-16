@@ -3,10 +3,10 @@
 \chapter{Implementation and Preliminary Performance Analysis}
 
 \section{Implementation}
-In this section, the main focus is on implementing the functions of LoRa nodes Alice and Bob through the Arduino programmable MCU board and IDE mentioned earlier, in conjunction with the LoRa frequency modulation chip and the algorithms mentioned above.
+In this chapter, the primary emphasis is on executing the functionalities of LoRa nodes Alice and Bob by leveraging the Arduino programmable MCU board and IDE previously discussed. This implementation is conducted in tandem with the LoRa frequency modulation chip and the algorithms outlined earlier.
 
 \section{Deep-in-Building and Outdoor Test}
-In this section, I conducted a test to generate LoRa physical layer keys in a practical application scenario. The test provided positive results, demonstrating the practical application of LoRa in real-world scenarios. Moreover, the findings are of significant reference value for the future utilization of the LoRa protocol in environmental monitoring.
+In this section, a practical test was undertaken to generate LoRa physical layer keys within a real-world application scenario including Deep-in-Building and Outdoor Test. The test yielded numerous results, thereby showcasing the tangible application of LoRa in real-world scenarios. Furthermore, the findings carry substantial reference value for informing and guiding the future deployment of the LoRa protocol, particularly in the context of environmental monitoring.
 
 \subsection{RSSI Pairs Generation}
 
@@ -18,13 +18,13 @@ In this section, I conducted a test to generate LoRa physical layer keys in a pr
 \end{figure}
 
 \subsection{Key Generation}
-I implemented a Python Program constitutes a crucial section of the thesis, focusing on LoRa physical layer key generation. Beginning with the processing of Received Signal Strength Indication (RSSI) data for both Alice and Bob, the code subsequently employs linear interpolation and Savitzky-Golay filtering to enhance the quality of the data.
+Than a Python Program that implemented constitutes a crucial section of the thesis, focusing on LoRa physical layer key generation. Beginning with the processing of Received Signal Strength Indication (RSSI) data for both Alice and Bob, the code subsequently employs linear interpolation and Savitzky-Golay filtering to enhance the quality of the data.
 
-Following these preprocessing steps, the script employs M-ary quantization on the smoothed RSSI values, utilizing a specified number of bits per sample and an alpha parameter. The homotopy method for error correction is then implemented, where a matrix A and vector y undergo iterative updates to correct errors in the data.
+Following these preprocessing steps, the script employs $M\--ary$ quantization on the smoothed RSSI values, utilizing a specified number of bits per sample and an alpha parameter. The homotopy method for error correction is then implemented, where a matrix \(A\) and vector y undergo iterative updates to correct errors in the data.
 
-The key generation process involves the random generation of a matrix A, the computation of vectors y1 and y2 based on the quantized data from Alice and Bob, and the application of error correction through the homotopy method. The final step involves XORing the original bits with the corrected bits to derive the cryptographic key.
+The key generation process involves the random generation of a matrix \(A\), the computation of vectors \(y_1\) and \(y_2\) based on the quantized data from Alice and Bob, and the application of error correction through the homotopy method. The final step involves XORing the original bits with the corrected bits to derive the cryptographic key.
 
-The code also incorporates visualizations using Matplotlib to illustrate the impact of linear interpolation and Savitzky-Golay filtering on the original RSSI values. Additionally, the thesis section concludes with the presentation of crucial output information, including filtered RSSI arrays for Alice and Bob, and the original and corrected keys for Alice. It is imperative to ensure the existence and proper format of the input file containing RSSI values (sampling1.txt) before executing the code.
+The code also incorporates visualizations using Matplotlib to illustrate the impact of linear interpolation and Savitzky-Golay filtering on the original RSSI values. Additionally, the thesis section concludes with the presentation of crucial output information, including filtered RSSI arrays for Alice and Bob, and the original and corrected keys for Alice.
 \begin{figure}
   \centering
   \includegraphics[width=0.9\linewidth]{fig5-2.png}
@@ -33,6 +33,7 @@ The code also incorporates visualizations using Matplotlib to illustrate the imp
 \end{figure}
 
 \subsection{Data Encrypt and Decrypt}
+Once the key has been generated, it can be employed alongside encryption algorithms to secure the data for transmission.
 
 \section{Performance Analysis}
 In this section, performance tests on password generation were implemented based on references, exploring the impact of different parameters. Additionally, the results were visualized for better comprehension of the test data.

@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Nov 16 18:15:00 2023
+Created on Thu Nov 16 20:40:42 2023
 
 @author: hkl
-"""
 
-import re
+"""
 import numpy as np
 from scipy.signal import savgol_filter
-import matplotlib.pyplot as plt
 
 def mAryQuantization(sampleArray, numBitsPerSample):
     sampleArrayLength = len(sampleArray)
@@ -32,17 +30,17 @@ def mAryQuantization(sampleArray, numBitsPerSample):
     for i in range(sampleArrayLength):
         for j in range(1, M + 1):
             if sampleArray[i] == minVal:
-                decimalValArray.append(1)  # Decimal assignment starts from 0
+                decimalValArray.append(1)
                 validIndices.append(i)
                 jj += 1
                 break
             if sampleArray[i] == maxVal:
-                decimalValArray.append(M - 1)  # Decimal assignment starts from 0
+                decimalValArray.append(M - 1) 
                 validIndices.append(i)
                 jj += 1
                 break
             if levelBase[j - 1] <= sampleArray[i] <= levelTop[j - 1]:
-                decimalValArray.append(j - 1)  # Decimal assignment starts from 0
+                decimalValArray.append(j - 1)
                 validIndices.append(i)
                 jj += 1
 
@@ -55,33 +53,21 @@ def mAryQuantization(sampleArray, numBitsPerSample):
 
 def myHomotopy(A, y):
     iter_times = 2000
-    n = A.shape[0]
     m = A.shape[1]
     x = np.zeros((m, 1))
     act_set = []
-
     for iter_idx in range(1, iter_times + 1):
         # Compute residual correlations
-        c = np.dot(A.T, (y - np.dot(A, x).reshape(6)))
-        
+        c = np.dot(A.T, (y - np.dot(A, x).reshape(6)))      
         # Compute active set
         lambda_max_idx = np.argmax(np.abs(c))
         lambda_max = np.abs(c[lambda_max_idx])
-
-        act_set = np.where(np.abs(np.abs(c) - lambda_max) < 1e-5)[0]
-
-        
+        act_set = np.where(np.abs(np.abs(c) - lambda_max) < 1e-5)[0]   
         state = np.zeros(m)
         state[act_set] = 1
-        
-        
         # Compute direction
         R = np.dot(A[:, act_set].T, A[:, act_set])
-        
-        #d = np.linalg.solve(R, np.sign(c[act_set]))
-        d = np.linalg.pinv(R).dot(np.sign(c[act_set]))
-        
-
+        d = np.linalg.inv(R).dot(np.sign(c[act_set]))
         # Compute step
         gamma = 1000
         for idx in range(m-1):
@@ -98,103 +84,28 @@ def myHomotopy(A, y):
 
             if tmp > 0:
                 gamma = min(tmp, gamma)
-
-        # Update x
-
-        
         x[act_set] = x[act_set] + (gamma * d)[0]
         
-
-        #input("wait")
-
-        # Check for convergence
         if np.linalg.norm(y - np.dot(A, x).reshape(6)) < 1e-6:
             break
-
     return x
 
-# read the RSSI pair
-with open('sampling1.txt', 'r') as file:
-    input_data = file.read()
+alice_rssi_values = [-39, -33, -33, -33, -33, -34, -33, -33, -33, -33, -34, -34, -33, -33, -33, -33, -33, -33, -33, -34, -39, -34, -39, -33, -32, -33, -33, -33, -33, -33, -33, -34, -34, -33, -33, -33, -33, -33, -33, -29, -40, -37, -28, -31, -31, -32, -31, -31, -30, -31, -30, -28, -25, -25, -37, -37, -29, -27, -27, -29, -29, -29, -30, -32, -33, -31, -31, -30, -30, -31, -26, -28, -29, -29, -28, -28, -28, -28, -30, -30, -31, -26, -26, -27, -26, -31, -30, -32, -32, -32, -32, -33, -33, -28, -28, -29, -29, -29, -31, -32, -29, -31, -31, -31, -26, -28, -28, -28, -28, -27, -27, -33, -27]
+bob_rssi_values = [-25, -26, -25, -25, -46, -26, -25, -26, -26, -26, -26, -26, -25, -26, -26, -26, -26, -26, -26, -26, -26, -26, -26, -25, -25, -26, -26, -25, -25, -26, -25, -26, -26, -26, -26, -25, -25, -25, -25, -22, -51, -52, -20, -24, -24, -25, -24, -24, -23, -24, -23, -21, -17, -18, -53, -52, -42, -40, -19, -22, -41, -22, -22, -25, -26, -23, -23, -22, -22, -23, -18, -21, -21, -21, -20, -20, -20, -42, -22, -22, -18, -19, -19, -20, -19, -23, -23, -24, -24, -24, -25, -25, -25, -20, -20, -20, -20, -20, -24, -24, -21, -23, -23, -23, -19, -20, -20, -21, -20, -20, -20, -41, -20]
 
-# Initailing the list
-alice_rssi_values = []
-bob_rssi_values = []
-
-# extrat "Alice's RSSI" and "Bob's RSSI"
-alice_pattern = re.compile(r"Alice's RSSI: (\S+)")
-bob_pattern = re.compile(r"Bob's RSSI: (\S+)")
-
-# 
-alice_matches = re.findall(alice_pattern, input_data)
-bob_matches = re.findall(bob_pattern, input_data)
-
-# 
-alice_rssi_values.extend(map(int, alice_matches))
-bob_rssi_values.extend(map(int, bob_matches))
-
-
-startIndex = 32
+startIndex = 0
 endIndex = 64
 
 rssi_alice = np.array(alice_rssi_values[startIndex:endIndex])
 rssi_bob = np.array(bob_rssi_values[startIndex:endIndex])
-
-m1 = rssi_alice.shape[0]
-n1 = 1
-
-m2 = rssi_bob.shape[0]
-n2 = 1
-
-
-# Step 1: Linear interpolation
-M = 1
-x = np.arange(1, m1 + 1)
-xq = np.arange(1, m1 + 1, 1/M)
-vq1_alice = np.interp(xq, x, rssi_alice)
-
-x2 = np.arange(1, m2 + 1)
-xq2 = np.arange(1, m2 + 1, 1/M)
-vq1_bob = np.interp(xq2, x2, rssi_bob)
-
-# Plot original and interpolated values
-plt.figure(1)
-plt.subplot(2, 1, 1)
-plt.plot(x, rssi_alice)
-plt.plot(xq, vq1_alice, ':.')
-plt.legend(['Original values', 'Interpolated values'])
-
-plt.subplot(2, 1, 2)
-plt.plot(x2, rssi_bob)
-plt.plot(xq2, vq1_bob, ':.')
-plt.legend(['Original values', 'Interpolated values'])
-
-plt.show()
 
 # Define filter parameters
 order = 5
 framelen = 11
 
 # Apply Savitzky-Golay filter to Alice and Bob's data
-alice_afterfilter = savgol_filter(vq1_alice, window_length=framelen, polyorder=order)
-bob_afterfilter = savgol_filter(vq1_bob, window_length=framelen, polyorder=order)
-
-# Plot After savgol_filter
-plt.figure(1)
-plt.subplot(2, 1, 1)
-plt.plot(x, rssi_alice)
-plt.plot(xq, vq1_alice, ':.')
-plt.plot(xq, alice_afterfilter, '-')
-plt.legend(['Original values', 'Interpolated values', 'savgol_filter'])
-
-plt.subplot(2, 1, 2)
-plt.plot(x2, rssi_bob)
-plt.plot(xq2, vq1_bob, ':.')
-plt.plot(xq2, bob_afterfilter, '-')
-plt.legend(['Original values', 'Interpolated values', 'savgol_filter'])
-
-plt.show()
-
+alice_afterfilter = savgol_filter(rssi_alice, window_length=framelen, polyorder=order)
+bob_afterfilter = savgol_filter(rssi_bob, window_length=framelen, polyorder=order)
 # 
 print("Array A (Alice's RSSI):", alice_afterfilter)
 print("Array B (Bob's RSSI):", bob_afterfilter)
@@ -202,9 +113,11 @@ print("Array B (Bob's RSSI):", bob_afterfilter)
 print(len(alice_afterfilter))
 print(len(bob_afterfilter))
 
+#Secret_key1 = mAryQuantization(rssi_alice, 2)
+#Secret_key2 = mAryQuantization(rssi_bob, 2)
+
 Secret_key1 = mAryQuantization(alice_afterfilter, 2)
 Secret_key2 = mAryQuantization(bob_afterfilter, 2)
-
 
 bits_1 = np.array([int(bit) for bit in Secret_key1])
 bits_2 = np.array([int(bit) for bit in Secret_key2])
@@ -222,8 +135,6 @@ y = y1 - y2
 mismatch = myHomotopy(A, y)
 
 bits_recover = np.logical_xor(bits_a, mismatch.reshape(len(mismatch))).astype(int)
-
-
 
 print("Before error correction")
 print(Secret_key1)

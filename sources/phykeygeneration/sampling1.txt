@@ -1,0 +1,1017 @@
+Sending SYN 105
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 57
+Message length: 3
+Alice's RSSI: -39
+Bob's RSSI: -25
+Snr: 9.25
+
+Sending SYN 106
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 58
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -26
+Snr: 9.00
+
+Sending SYN 107
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 59
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -25
+Snr: 9.50
+
+Sending SYN 108
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 60
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -25
+Snr: 9.50
+
+Sending SYN 109
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 61
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -46
+Snr: 8.50
+
+Sending SYN 110
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 62
+Message length: 3
+Alice's RSSI: -34
+Bob's RSSI: -26
+Snr: 8.75
+
+Sending SYN 111
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 63
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -25
+Snr: 9.00
+
+Sending SYN 112
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 64
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -26
+Snr: 8.75
+
+Sending SYN 113
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 65
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -26
+Snr: 9.25
+
+Sending SYN 114
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 66
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -26
+Snr: 9.00
+
+Sending SYN 115
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 67
+Message length: 3
+Alice's RSSI: -34
+Bob's RSSI: -26
+Snr: 9.00
+
+Sending SYN 116
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 68
+Message length: 3
+Alice's RSSI: -34
+Bob's RSSI: -26
+Snr: 8.75
+
+Sending SYN 117
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 69
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -25
+Snr: 9.25
+
+Sending SYN 118
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 70
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -26
+Snr: 9.25
+
+Sending SYN 119
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 71
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -26
+Snr: 9.50
+
+Sending SYN 120
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 72
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -26
+Snr: 8.75
+
+Sending SYN 121
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 73
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -26
+Snr: 9.00
+
+Sending SYN 122
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 74
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -26
+Snr: 8.75
+
+Sending SYN 123
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 75
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -26
+Snr: 8.75
+
+Sending SYN 124
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 76
+Message length: 3
+Alice's RSSI: -34
+Bob's RSSI: -26
+Snr: 9.00
+
+Sending SYN 125
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 77
+Message length: 3
+Alice's RSSI: -39
+Bob's RSSI: -26
+Snr: 9.25
+
+Sending SYN 126
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 78
+Message length: 3
+Alice's RSSI: -34
+Bob's RSSI: -26
+Snr: 8.75
+
+Sending SYN 127
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 79
+Message length: 3
+Alice's RSSI: -39
+Bob's RSSI: -26
+Snr: 9.00
+
+Sending SYN 128
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 80
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -25
+Snr: 9.25
+
+Sending SYN 129
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 81
+Message length: 3
+Alice's RSSI: -32
+Bob's RSSI: -25
+Snr: 9.25
+
+Sending SYN 130
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 82
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -26
+Snr: 9.25
+
+Sending SYN 131
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 83
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -26
+Snr: 9.25
+
+Sending SYN 132
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 84
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -25
+Snr: 9.50
+
+Sending SYN 133
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 85
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -25
+Snr: 9.25
+
+Sending SYN 134
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 86
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -26
+Snr: 9.25
+
+Sending SYN 135
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 87
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -25
+Snr: 9.75
+
+Sending SYN 136
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 88
+Message length: 3
+Alice's RSSI: -34
+Bob's RSSI: -26
+Snr: 9.25
+
+Sending SYN 137
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 89
+Message length: 3
+Alice's RSSI: -34
+Bob's RSSI: -26
+Snr: 9.00
+
+Sending SYN 138
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 90
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -26
+Snr: 9.25
+
+Sending SYN 139
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 91
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -26
+Snr: 9.50
+
+Sending SYN 140
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 92
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -25
+Snr: 9.00
+
+Sending SYN 141
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 93
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -25
+Snr: 9.25
+
+Sending SYN 142
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 94
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -25
+Snr: 9.25
+
+Sending SYN 143
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 95
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -25
+Snr: 9.25
+
+Sending SYN 144
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 96
+Message length: 3
+Alice's RSSI: -29
+Bob's RSSI: -22
+Snr: 9.00
+
+Sending SYN 145
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 97
+Message length: 3
+Alice's RSSI: -40
+Bob's RSSI: -51
+Snr: 8.75
+
+Sending SYN 146
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 98
+Message length: 3
+Alice's RSSI: -37
+Bob's RSSI: -52
+Snr: 9.00
+
+Sending SYN 147
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 99
+Message length: 3
+Alice's RSSI: -28
+Bob's RSSI: -20
+Snr: 9.00
+
+Sending SYN 148
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 100
+Message length: 3
+Alice's RSSI: -31
+Bob's RSSI: -24
+Snr: 9.50
+
+Sending SYN 149
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 101
+Message length: 3
+Alice's RSSI: -31
+Bob's RSSI: -24
+Snr: 9.25
+
+Sending SYN 150
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 102
+Message length: 3
+Alice's RSSI: -32
+Bob's RSSI: -25
+Snr: 9.25
+
+Sending SYN 151
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 103
+Message length: 3
+Alice's RSSI: -31
+Bob's RSSI: -24
+Snr: 9.25
+
+Sending SYN 152
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 104
+Message length: 3
+Alice's RSSI: -31
+Bob's RSSI: -24
+Snr: 9.00
+
+Sending SYN 153
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 105
+Message length: 3
+Alice's RSSI: -30
+Bob's RSSI: -23
+Snr: 9.00
+
+Sending SYN 154
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 106
+Message length: 3
+Alice's RSSI: -31
+Bob's RSSI: -24
+Snr: 9.00
+
+Sending SYN 155
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 107
+Message length: 3
+Alice's RSSI: -30
+Bob's RSSI: -23
+Snr: 9.25
+
+Sending SYN 156
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 108
+Message length: 3
+Alice's RSSI: -28
+Bob's RSSI: -21
+Snr: 9.00
+
+Sending SYN 157
+Sending SYN 158
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 109
+Message length: 3
+Alice's RSSI: -25
+Bob's RSSI: -17
+Snr: 9.00
+
+Sending SYN 159
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 110
+Message length: 3
+Alice's RSSI: -25
+Bob's RSSI: -18
+Snr: 9.00
+
+Sending SYN 160
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 111
+Message length: 3
+Alice's RSSI: -37
+Bob's RSSI: -53
+Snr: 9.50
+
+Sending SYN 161
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 112
+Message length: 3
+Alice's RSSI: -37
+Bob's RSSI: -52
+Snr: 9.75
+
+Sending SYN 162
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 113
+Message length: 3
+Alice's RSSI: -29
+Bob's RSSI: -42
+Snr: 8.25
+
+Sending SYN 163
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 114
+Message length: 3
+Alice's RSSI: -27
+Bob's RSSI: -40
+Snr: 8.50
+
+Sending SYN 164
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 115
+Message length: 3
+Alice's RSSI: -27
+Bob's RSSI: -19
+Snr: 9.00
+
+Sending SYN 165
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 116
+Message length: 3
+Alice's RSSI: -29
+Bob's RSSI: -22
+Snr: 9.00
+
+Sending SYN 166
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 117
+Message length: 3
+Alice's RSSI: -29
+Bob's RSSI: -41
+Snr: 8.00
+
+Sending SYN 167
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 118
+Message length: 3
+Alice's RSSI: -29
+Bob's RSSI: -22
+Snr: 9.00
+
+Sending SYN 168
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 119
+Message length: 3
+Alice's RSSI: -30
+Bob's RSSI: -22
+Snr: 9.00
+
+Sending SYN 169
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 120
+Message length: 3
+Alice's RSSI: -32
+Bob's RSSI: -25
+Snr: 9.25
+
+Sending SYN 170
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 121
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -26
+Snr: 9.50
+
+Sending SYN 171
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 122
+Message length: 3
+Alice's RSSI: -31
+Bob's RSSI: -23
+Snr: 9.00
+
+Sending SYN 172
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 123
+Message length: 3
+Alice's RSSI: -31
+Bob's RSSI: -23
+Snr: 9.25
+
+Sending SYN 173
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 124
+Message length: 3
+Alice's RSSI: -30
+Bob's RSSI: -22
+Snr: 9.25
+
+Sending SYN 174
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 125
+Message length: 3
+Alice's RSSI: -30
+Bob's RSSI: -22
+Snr: 9.25
+
+Sending SYN 175
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 126
+Message length: 3
+Alice's RSSI: -31
+Bob's RSSI: -23
+Snr: 9.50
+
+Sending SYN 176
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 127
+Message length: 3
+Alice's RSSI: -26
+Bob's RSSI: -18
+Snr: 9.00
+
+Sending SYN 177
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 128
+Message length: 3
+Alice's RSSI: -28
+Bob's RSSI: -21
+Snr: 9.25
+
+Sending SYN 178
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 129
+Message length: 3
+Alice's RSSI: -29
+Bob's RSSI: -21
+Snr: 9.00
+
+Sending SYN 179
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 130
+Message length: 3
+Alice's RSSI: -29
+Bob's RSSI: -21
+Snr: 9.00
+
+Sending SYN 180
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 131
+Message length: 3
+Alice's RSSI: -28
+Bob's RSSI: -20
+Snr: 9.00
+
+Sending SYN 181
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 132
+Message length: 3
+Alice's RSSI: -28
+Bob's RSSI: -20
+Snr: 9.25
+
+Sending SYN 182
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 133
+Message length: 3
+Alice's RSSI: -28
+Bob's RSSI: -20
+Snr: 9.25
+
+Sending SYN 183
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 134
+Message length: 3
+Alice's RSSI: -28
+Bob's RSSI: -42
+Snr: 8.50
+
+Sending SYN 184
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 135
+Message length: 3
+Alice's RSSI: -30
+Bob's RSSI: -22
+Snr: 9.00
+
+Sending SYN 185
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 136
+Message length: 3
+Alice's RSSI: -30
+Bob's RSSI: -22
+Snr: 9.50
+
+Sending SYN 186
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 137
+Message length: 3
+Alice's RSSI: -31
+Bob's RSSI: -18
+Snr: 9.00
+
+Sending SYN 187
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 138
+Message length: 3
+Alice's RSSI: -26
+Bob's RSSI: -19
+Snr: 9.00
+
+Sending SYN 188
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 139
+Message length: 3
+Alice's RSSI: -26
+Bob's RSSI: -19
+Snr: 9.25
+
+Sending SYN 189
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 140
+Message length: 3
+Alice's RSSI: -27
+Bob's RSSI: -20
+Snr: 9.00
+
+Sending SYN 190
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 141
+Message length: 3
+Alice's RSSI: -26
+Bob's RSSI: -19
+Snr: 9.00
+
+Sending SYN 191
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 142
+Message length: 3
+Alice's RSSI: -31
+Bob's RSSI: -23
+Snr: 9.25
+
+Sending SYN 192
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 143
+Message length: 3
+Alice's RSSI: -30
+Bob's RSSI: -23
+Snr: 9.25
+
+Sending SYN 193
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 144
+Message length: 3
+Alice's RSSI: -32
+Bob's RSSI: -24
+Snr: 9.50
+
+Sending SYN 194
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 145
+Message length: 3
+Alice's RSSI: -32
+Bob's RSSI: -24
+Snr: 9.50
+
+Sending SYN 195
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 146
+Message length: 3
+Alice's RSSI: -32
+Bob's RSSI: -24
+Snr: 9.25
+
+Sending SYN 196
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 147
+Message length: 3
+Alice's RSSI: -32
+Bob's RSSI: -25
+Snr: 9.00
+
+Sending SYN 197
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 148
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -25
+Snr: 9.00
+
+Sending SYN 198
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 149
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -25
+Snr: 9.25
+
+Sending SYN 199
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 150
+Message length: 3
+Alice's RSSI: -28
+Bob's RSSI: -20
+Snr: 9.50
+
+Sending SYN 200
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 151
+Message length: 3
+Alice's RSSI: -28
+Bob's RSSI: -20
+Snr: 9.25
+
+Sending SYN 201
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 152
+Message length: 3
+Alice's RSSI: -29
+Bob's RSSI: -20
+Snr: 9.25
+
+Sending SYN 202
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 153
+Message length: 3
+Alice's RSSI: -29
+Bob's RSSI: -20
+Snr: 9.00
+
+Sending SYN 203
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 154
+Message length: 3
+Alice's RSSI: -29
+Bob's RSSI: -20
+Snr: 9.00
+
+Sending SYN 204
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 155
+Message length: 3
+Alice's RSSI: -31
+Bob's RSSI: -24
+Snr: 9.25
+
+Sending SYN 205
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 156
+Message length: 3
+Alice's RSSI: -32
+Bob's RSSI: -24
+Snr: 9.50
+
+Sending SYN 206
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 157
+Message length: 3
+Alice's RSSI: -29
+Bob's RSSI: -21
+Snr: 8.75
+
+Sending SYN 207
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 158
+Message length: 3
+Alice's RSSI: -31
+Bob's RSSI: -23
+Snr: 9.25
+
+Sending SYN 208
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 159
+Message length: 3
+Alice's RSSI: -31
+Bob's RSSI: -23
+Snr: 9.25
+
+Sending SYN 209
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 160
+Message length: 3
+Alice's RSSI: -31
+Bob's RSSI: -23
+Snr: 9.00
+
+Sending SYN 210
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 161
+Message length: 3
+Alice's RSSI: -26
+Bob's RSSI: -19
+Snr: 9.25
+
+Sending SYN 211
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 162
+Message length: 3
+Alice's RSSI: -28
+Bob's RSSI: -20
+Snr: 9.00
+
+Sending SYN 212
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 163
+Message length: 3
+Alice's RSSI: -28
+Bob's RSSI: -20
+Snr: 9.00
+
+Sending SYN 213
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 164
+Message length: 3
+Alice's RSSI: -28
+Bob's RSSI: -21
+Snr: 9.25
+
+Sending SYN 214
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 165
+Message length: 3
+Alice's RSSI: -28
+Bob's RSSI: -20
+Snr: 9.00
+
+Sending SYN 215
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 166
+Message length: 3
+Alice's RSSI: -27
+Bob's RSSI: -20
+Snr: 9.00
+
+Sending SYN 216
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 167
+Message length: 3
+Alice's RSSI: -27
+Bob's RSSI: -20
+Snr: 9.00
+
+Sending SYN 217
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 168
+Message length: 3
+Alice's RSSI: -33
+Bob's RSSI: -41
+Snr: 8.50
+
+Sending SYN 218
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 169
+Message length: 3
+Alice's RSSI: -27
+Bob's RSSI: -20
+Snr: 9.00

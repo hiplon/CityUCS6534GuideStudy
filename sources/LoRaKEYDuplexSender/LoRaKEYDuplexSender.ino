@@ -13,6 +13,7 @@
 */
 #include <SPI.h>              // include libraries
 #include <LoRa.h>
+#include <ChaCha.h>
 
 const int csPin = 7;          // LoRa radio chip select
 const int resetPin = 6;       // LoRa radio reset

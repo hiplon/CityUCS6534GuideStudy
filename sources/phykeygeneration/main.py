@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Nov 16 18:15:00 2023
+Created on Thu Nov 16 20:38:48 2023
 
 @author: hkl
 """
-
 import re
 import numpy as np
 from scipy.signal import savgol_filter
@@ -62,26 +61,16 @@ def myHomotopy(A, y):
 
     for iter_idx in range(1, iter_times + 1):
         # Compute residual correlations
-        c = np.dot(A.T, (y - np.dot(A, x).reshape(6)))
-        
+        c = np.dot(A.T, (y - np.dot(A, x).reshape(6)))      
         # Compute active set
         lambda_max_idx = np.argmax(np.abs(c))
         lambda_max = np.abs(c[lambda_max_idx])
-
-        act_set = np.where(np.abs(np.abs(c) - lambda_max) < 1e-5)[0]
-
-        
+        act_set = np.where(np.abs(np.abs(c) - lambda_max) < 1e-5)[0]   
         state = np.zeros(m)
         state[act_set] = 1
-        
-        
         # Compute direction
         R = np.dot(A[:, act_set].T, A[:, act_set])
-        
-        #d = np.linalg.solve(R, np.sign(c[act_set]))
-        d = np.linalg.pinv(R).dot(np.sign(c[act_set]))
-        
-
+        d = np.linalg.inv(R).dot(np.sign(c[act_set]))
         # Compute step
         gamma = 1000
         for idx in range(m-1):
@@ -98,19 +87,10 @@ def myHomotopy(A, y):
 
             if tmp > 0:
                 gamma = min(tmp, gamma)
-
-        # Update x
-
-        
         x[act_set] = x[act_set] + (gamma * d)[0]
         
-
-        #input("wait")
-
-        # Check for convergence
         if np.linalg.norm(y - np.dot(A, x).reshape(6)) < 1e-6:
             break
-
     return x
 
 # read the RSSI pair
@@ -134,7 +114,7 @@ alice_rssi_values.extend(map(int, alice_matches))
 bob_rssi_values.extend(map(int, bob_matches))
 
 
-startIndex = 32
+startIndex = 0
 endIndex = 64
 
 rssi_alice = np.array(alice_rssi_values[startIndex:endIndex])

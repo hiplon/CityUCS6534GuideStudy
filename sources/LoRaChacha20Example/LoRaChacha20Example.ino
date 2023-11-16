@@ -55,7 +55,7 @@ void loop() {
     //Serial.println(message);
    // uint8_t messageArray[message.length()];
     //message.toCharArray(messageArray, message.length());
-    int PlaintextSize = (sizeof Plaintext) ;
+    int PlaintextSize = (sizeof Plaintext);
     int cryptSize = PlaintextSize;
     
     byte outputtext[PlaintextSize];

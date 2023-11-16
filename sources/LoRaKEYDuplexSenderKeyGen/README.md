@@ -1,0 +1,1 @@
+LoRaGenKEY is not completely working in LoRa Node, use phykeygeneration instead.
