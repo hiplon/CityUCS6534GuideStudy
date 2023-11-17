@@ -10,7 +10,7 @@ Physical layer key generation for LoRa is a promising technique for establishing
 \subsection{Physical Layer Key Generation}
 Physical layer key generation involves creating a shared secret key between wireless devices by exploiting the reciprocity of the random fading channel. In this process, wireless devices measure highly correlated characteristics of the wireless channel, such as channel impulse responses or received signal strengths, and utilize them as shared random sources for key generation. Theoretically, in a rich multipath scattering environment, a passive attacker positioned more than a half-wavelength away from legitimate users will obtain uncorrelated channel measurements, limiting their ability to infer information about the generated key. Notably, physical layer key generation mechanisms eschew the need for computationally intensive processes and hold the potential to achieve information-theoretic security. This security is distinct in that the secrecy of the generated key is not contingent on the difficulty of a computational problem but rather relies on the inherent physical laws governing wireless fading channels \cite{7120014}.
 
-Generally, physical layer key generation applies the following five steps to generate a key: channel probing, randomness extraction, quantization, information reconciliation, and privacy amplification, illustrated in Figure 2.1.
+Generally, physical layer key generation applies the following five steps to generate a key: channel probing, randomness extraction, quantization, information reconciliation, and privacy amplification, illustrated in Figure \ref{fig:2-1}.
 \begin{figure}
   \centering
   \includegraphics[width=0.6\linewidth]{fig2-1.png}
@@ -19,7 +19,7 @@ Generally, physical layer key generation applies the following five steps to gen
 \end{figure}
 
 \subsection{LoRa Physical Layer Protocol}
-LoRa embraces the Chirp Spread Spectrum (CSS) modulation mechanism, offering both anti-interference capabilities and the ability for long-range communication. In the LoRa physical layer protocol (PHY), illustrated in Figure 2.2(a) and (b), a fundamental symbol consists of a chirp characterized by a linear increase in frequency over time. The encoded information is represented by the start frequency \(f_{start}\) of a symbol. Notably, a LoRa symbol comprises two segments featuring a distinct sharp frequency drop, as depicted in Figure 2-2(c).
+LoRa embraces the Chirp Spread Spectrum (CSS) modulation mechanism, offering both anti-interference capabilities and the ability for long-range communication. In the LoRa physical layer protocol (PHY), illustrated in Figure \ref{fig:2-2}(a) and (b), a fundamental symbol consists of a chirp characterized by a linear increase in frequency over time. The encoded information is represented by the start frequency \(f_{start}\) of a symbol. Notably, a LoRa symbol comprises two segments featuring a distinct sharp frequency drop, as depicted in Figure \ref{fig:2-2}(c).
 \begin{figure}
   \centering
   \includegraphics[width=0.7\linewidth]{fig2-2.png}
@@ -27,7 +27,7 @@ LoRa embraces the Chirp Spread Spectrum (CSS) modulation mechanism, offering bot
   \label{fig:2-2}
 \end{figure}
 
-The Received Signal Strength Indicator (RSSI) serves as a relative measurement aiding in the assessment of whether the received signal is sufficiently robust for establishing a reliable wireless connection from the transmitter. Given LoRa's support for bi-directional communication, RSSI holds significance for both gateways and end devices. RSSI is quantified in dBm, with its values presented in negative form. A proximity to zero in the RSSI value indicates a stronger received signal, as exemplified in positive and negative instances in Figure 2.3 (a) and (b) \cite{rssiandsnrfigure}. Several factors predominantly influence RSSI, including path loss, antenna gain, and cable/connector loss.
+The Received Signal Strength Indicator (RSSI) serves as a relative measurement aiding in the assessment of whether the received signal is sufficiently robust for establishing a reliable wireless connection from the transmitter. Given LoRa's support for bi-directional communication, RSSI holds significance for both gateways and end devices. RSSI is quantified in dBm, with its values presented in negative form. A proximity to zero in the RSSI value indicates a stronger received signal, as exemplified in positive and negative instances in Figure \ref{fig:2-3} \cite{rssiandsnrfigure}. Several factors predominantly influence RSSI, including path loss, antenna gain, and cable/connector loss.
 \begin{figure}
   \centering
   \includegraphics[width=0.6\linewidth]{fig2-3.png}
