@@ -10,108 +10,12 @@ import numpy as np
 from scipy.signal import savgol_filter
 import matplotlib.pyplot as plt
 
-def mAryQuantization(sampleArray, numBitsPerSample):
-    sampleArrayLength = len(sampleArray)
-    M = 2**numBitsPerSample
 
-    minVal = min(sampleArray)
-    maxVal = max(sampleArray)
+keylen = 4
 
-    offset = minVal
-    levelBase = []
-    levelTop = []
+callen = 8
 
-    for i in range(1, M + 1):
-        levelBase.append(offset)
-        levelTop.append(levelBase[i - 1])
-        offset = offset
-    jj = 0
-    decimalValArray = []
-    validIndices = []
-    
-    for i in range(sampleArrayLength):
-        for j in range(1, M + 1):
-            if sampleArray[i] == minVal:
-                decimalValArray.append(1)  # Decimal assignment starts from 0
-                validIndices.append(i)
-                jj += 1
-                break
-            if sampleArray[i] == maxVal:
-                decimalValArray.append(M - 1)  # Decimal assignment starts from 0
-                validIndices.append(i)
-                jj += 1
-                break
-            if levelBase[j - 1] <= sampleArray[i] <= levelTop[j - 1]:
-                decimalValArray.append(j - 1)  # Decimal assignment starts from 0
-                validIndices.append(i)
-                jj += 1
-
-    decimalValArrayLen = len(decimalValArray)
-    bitString = []
-    for i in range(decimalValArrayLen):
-        bitString.extend(format(decimalValArray[i], f'0{numBitsPerSample}b'))
-
-    return bitString
-
-def myHomotopy(A, y):
-    iter_times = 2000
-    n = A.shape[0]
-    m = A.shape[1]
-    x = np.zeros((m, 1))
-    act_set = []
-
-    for iter_idx in range(1, iter_times + 1):
-        # Compute residual correlations
-        c = np.dot(A.T, (y - np.dot(A, x).reshape(6)))
-        
-        # Compute active set
-        lambda_max_idx = np.argmax(np.abs(c))
-        lambda_max = np.abs(c[lambda_max_idx])
-
-        act_set = np.where(np.abs(np.abs(c) - lambda_max) < 1e-5)[0]
-
-        
-        state = np.zeros(m)
-        state[act_set] = 1
-        
-        
-        # Compute direction
-        R = np.dot(A[:, act_set].T, A[:, act_set])
-        
-        #d = np.linalg.solve(R, np.sign(c[act_set]))
-        d = np.linalg.pinv(R).dot(np.sign(c[act_set]))
-        
-
-        # Compute step
-        gamma = 1000
-        for idx in range(m-1):
-            if state[idx]:
-                # Active elements
-                my_id = np.where(act_set == idx)[0]
-                tmp = max(0, -x[idx] / d[my_id])
-            else:
-                # Null elements
-                av = np.dot(A[:, idx].T, np.dot(A[:, act_set], d))
-                tmp1 = max(0, (lambda_max - c[idx]) / (1 - av))
-                tmp2 = max(0, (lambda_max + c[idx]) / (1 + av))
-                tmp = min(tmp1, tmp2)
-
-            if tmp > 0:
-                gamma = min(tmp, gamma)
-
-        # Update x
-
-        
-        x[act_set] = x[act_set] + (gamma * d)[0]
-        
-
-        #input("wait")
-
-        # Check for convergence
-        if np.linalg.norm(y - np.dot(A, x).reshape(6)) < 1e-6:
-            break
-
-    return x
+listlen = keylen * callen
 
 # read the RSSI pair
 with open('sampling1.txt', 'r') as file:
@@ -134,8 +38,8 @@ alice_rssi_values.extend(map(int, alice_matches))
 bob_rssi_values.extend(map(int, bob_matches))
 
 
-startIndex = 32
-endIndex = 64
+startIndex = 0
+endIndex = listlen
 
 rssi_alice = np.array(alice_rssi_values[startIndex:endIndex])
 rssi_bob = np.array(bob_rssi_values[startIndex:endIndex])
@@ -202,32 +106,63 @@ print("Array B (Bob's RSSI):", bob_afterfilter)
 print(len(alice_afterfilter))
 print(len(bob_afterfilter))
 
-Secret_key1 = mAryQuantization(alice_afterfilter, 2)
-Secret_key2 = mAryQuantization(bob_afterfilter, 2)
+# 将32个值分为4行，每行8个数
+rows = [rssi_alice[i:i+8] for i in range(0, listlen, callen)]
+
+# 初始化结果列表
+result_list = []
+
+# 对每行进行处理
+for row in rows:
+    trend_values = []
+    
+    # 判断前后趋势
+    for i in range(1, len(row)):
+        if row[i] > row[i-1]:
+            trend_values.append(1)
+        else:
+            trend_values.append(0)
+
+    # 统计趋势数量
+    count_ones = trend_values.count(1)
+    count_zeros = trend_values.count(0)
+
+    # 根据数量判断最终值
+    result = 1 if count_ones > count_zeros else 0
+
+    # 添加到结果列表
+    result_list.append(result)
+
+# 打印结果
+print("Final Result List:", result_list)
 
 
-bits_1 = np.array([int(bit) for bit in Secret_key1])
-bits_2 = np.array([int(bit) for bit in Secret_key2])
 
-len_bits = min(len(bits_1), len(bits_2))
-bits_a = np.array(bits_1[:len_bits])
-bits_b = np.array(bits_2[:len_bits])
+rows = [rssi_bob[i:i+8] for i in range(0, listlen, callen)]
 
-A = np.random.randn(6, len_bits)
-y1 = np.dot(A, bits_b)
-y2 = np.dot(A, bits_a)
-y = y1 - y2
+# 初始化结果列表
+result_list = []
 
-# Perform error correction using myHomotopy
-mismatch = myHomotopy(A, y)
+# 对每行进行处理
+for row in rows:
+    trend_values = []
+    
+    # 判断前后趋势
+    for i in range(1, len(row)):
+        if row[i] > row[i-1]:
+            trend_values.append(1)
+        else:
+            trend_values.append(0)
 
-bits_recover = np.logical_xor(bits_a, mismatch.reshape(len(mismatch))).astype(int)
+    # 统计趋势数量
+    count_ones = trend_values.count(1)
+    count_zeros = trend_values.count(0)
 
+    # 根据数量判断最终值
+    result = 1 if count_ones > count_zeros else 0
 
+    # 添加到结果列表
+    result_list.append(result)
 
-print("Before error correction")
-print(Secret_key1)
-print(Secret_key2)
-print("After perform error correction for Alice")
-print(bits_recover)
-
+# 打印结果
+print("Final Result List:", result_list)
