@@ -166,13 +166,14 @@ plt.plot(x, rssi_alice)
 plt.plot(xq, vq1_alice, ':.')
 plt.plot(xq, alice_afterfilter, '-')
 plt.legend(['Original values', 'Interpolated values', 'savgol_filter'])
-
+plt.title('Alice')
 plt.subplot(2, 1, 2)
 plt.plot(x2, rssi_bob)
 plt.plot(xq2, vq1_bob, ':.')
 plt.plot(xq2, bob_afterfilter, '-')
 plt.legend(['Original values', 'Interpolated values', 'savgol_filter'])
-
+plt.title('Bob')
+plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1, hspace=0.3)
 plt.show()
 
 # 
@@ -206,8 +207,7 @@ bits_recover = np.logical_xor(bits_a, mismatch.reshape(len(mismatch))).astype(in
 
 
 print("Before error correction")
-print(Secret_key1)
-print(Secret_key2)
+print("Alice's generated key" + str(Secret_key1))
+print("Bob's generated key" + str(Secret_key2))
 print("After perform error correction for Alice")
-print(bits_recover)
-
+print("Alice's generated key" + str(bits_recover))

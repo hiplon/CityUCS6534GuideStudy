@@ -137,8 +137,8 @@ mismatch = myHomotopy(A, y)
 bits_recover = np.logical_xor(bits_a, mismatch.reshape(len(mismatch))).astype(int)
 
 print("Before error correction")
-print(Secret_key1)
-print(Secret_key2)
+print("Alice's generated key" + str(Secret_key1))
+print("Bob's generated key" + str(Secret_key2))
 print("After perform error correction for Alice")
-print(bits_recover)
+print("Alice's generated key" + str(bits_recover))
 

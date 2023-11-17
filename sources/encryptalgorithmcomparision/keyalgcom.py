@@ -73,38 +73,41 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 
-naxbox2 = [0, 150, 30, 60]
+naxbox2 = [0, 150, 28, 62]
 
 plotx_list = np.array(plotx_list)
 # example data
 polyX = plotx_list
-polyY = data_chacha['bitrate']
+
+polyY1 = data_chacha['bitrate']
 polyY2 = data_aes['bitrate']
 polyX = polyX[:,newaxis]
 
-plin = {}
+plin1 = {}
 plin2 = {}
 for d in [1,2,3,4,5,6]:
     # extract polynomial features with degree d
-    polyfeats = preprocessing.PolynomialFeatures(degree=d)
-    polyXf = polyfeats.fit_transform(polyX)
+    polyfeats1 = preprocessing.PolynomialFeatures(degree=d)
+    polyfeats2 = preprocessing.PolynomialFeatures(degree=d)
+    polyXf1 = polyfeats1.fit_transform(polyX)
+    polyXf2 = polyfeats2.fit_transform(polyX)
 
     # fit the parameters
-    plin[d] = linear_model.LinearRegression()
-    plin[d].fit(polyXf, polyY)
+    plin1[d] = linear_model.LinearRegression()
+    plin1[d].fit(polyXf1, polyY1)
     
     plin2[d] = linear_model.LinearRegression()
-    plin2[d].fit(polyXf, polyY2)
+    plin2[d].fit(polyXf2, polyY2)
 
 kernels = [  DotProduct()    + WhiteKernel(), 
              DotProduct()**2 + WhiteKernel(), 
              DotProduct()**3 + WhiteKernel(), 
              RBF()           + WhiteKernel()   ]
-gpr = {}
+gpr1 = {}
 gpr2 = {}
 for i,k in enumerate(kernels):
-    gpr[i] = gaussian_process.GaussianProcessRegressor(kernel=k, random_state=6534, normalize_y=True)
-    gpr[i].fit(polyX, polyY)
+    gpr1[i] = gaussian_process.GaussianProcessRegressor(kernel=k, random_state=6534, normalize_y=True)
+    gpr1[i].fit(polyX, polyY1)
     
     gpr2[i] = gaussian_process.GaussianProcessRegressor(kernel=k, random_state=6534, normalize_y=True)
     gpr2[i].fit(polyX, polyY2)
@@ -114,15 +117,13 @@ kernelnames = ['linear+rbf',
                'poly3+rbf', 
                'rbf+rbf']
 i=3
-model = gpr[i]
-
-print(model.__class__.__name__)
+model1 = gpr1[i]
 
 model2 = gpr2[i]
-print(model2.__class__.__name__)
+
 
 X = polyX
-Y = polyY
+Y1 = polyY1
 Y2 = polyY2
 numx = 150
 xr = linspace(naxbox2[0], naxbox2[1], numx)
@@ -137,8 +138,8 @@ if feattrans != None:
 else:
     xrf = xr[:,newaxis]
 
-if model.__class__.__name__ == "GaussianProcessRegressor":
-    Ypred, Ystd = model.predict(xrf, return_std=True)
+if model1.__class__.__name__ == "GaussianProcessRegressor":
+    Ypred1, Ystd1 = model1.predict(xrf, return_std=True)
     Ypred2, Ystd2 = model2.predict(xrf, return_std=True)
     hasstd = True
 else:
@@ -146,7 +147,7 @@ else:
     hasstd = False
 
 if hasstd:
-    plt.fill_between(xr, Ypred - 2*Ystd, Ypred + 2*Ystd,
+    plt.fill_between(xr, Ypred1 - 2*Ystd1, Ypred1 + 2*Ystd1,
                  alpha=0.1, color='k')
     plt.fill_between(xr, Ypred2 - 2*Ystd2, Ypred2 + 2*Ystd2,
                  alpha=0.1, color='g')
@@ -167,8 +168,8 @@ if hasstd:
     plt.fill_between(plotx_list, Ypred2 - 2*Ystd2, Ypred2 + 2*Ystd2,
                  alpha=0.1, color='g')
 '''
-plt.plot(plotx_list, Y, 'b.')
-plt.plot(xr, Ypred, 'r-')
+plt.plot(plotx_list, Y1, 'b.')
+plt.plot(xr, Ypred1, 'r-')
 plt.plot(plotx_list, Y2, 'b.')
 plt.plot(xr, Ypred2, 'r-')
 plt.axis(naxbox2)

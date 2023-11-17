@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 
 keylen = 4
 
-callen = 8
+callen = 28
 
 listlen = keylen * callen
 
@@ -120,41 +120,48 @@ print(len(alice_afterfilter))
 print(len(bob_afterfilter))
 
 
-naxbox2 = [0, 150, -50, -20]
+naxbox2 = [0, listlen*1.1, -55, -15]
 
-plotx_list = pd.Series(range(1, 101)).tolist()
+plotx_list = pd.Series(range(1, listlen+1)).tolist()
 
 
 plotx_list = np.array(plotx_list)
 # example data
 polyX = plotx_list
-polyY = data_chacha['bitrate']
-polyY2 = data_aes['bitrate']
+
+polyY1 = vq1_alice
+polyY2 = vq1_bob
+
+#polyY1 = alice_afterfilter
+#polyY2 = bob_afterfilter
+
 polyX = polyX[:,newaxis]
 
-plin = {}
+plin1 = {}
 plin2 = {}
 for d in [1,2,3,4,5,6]:
     # extract polynomial features with degree d
-    polyfeats = preprocessing.PolynomialFeatures(degree=d)
-    polyXf = polyfeats.fit_transform(polyX)
+    polyfeats1 = preprocessing.PolynomialFeatures(degree=d)
+    polyfeats2 = preprocessing.PolynomialFeatures(degree=d)
+    polyXf1 = polyfeats1.fit_transform(polyX)
+    polyXf2 = polyfeats2.fit_transform(polyX)
 
     # fit the parameters
-    plin[d] = linear_model.LinearRegression()
-    plin[d].fit(polyXf, polyY)
+    plin1[d] = linear_model.LinearRegression()
+    plin1[d].fit(polyXf1, polyY1)
     
     plin2[d] = linear_model.LinearRegression()
-    plin2[d].fit(polyXf, polyY2)
+    plin2[d].fit(polyXf2, polyY2)
 
 kernels = [  DotProduct()    + WhiteKernel(), 
              DotProduct()**2 + WhiteKernel(), 
              DotProduct()**3 + WhiteKernel(), 
              RBF()           + WhiteKernel()   ]
-gpr = {}
+gpr1 = {}
 gpr2 = {}
 for i,k in enumerate(kernels):
-    gpr[i] = gaussian_process.GaussianProcessRegressor(kernel=k, random_state=6534, normalize_y=True)
-    gpr[i].fit(polyX, polyY)
+    gpr1[i] = gaussian_process.GaussianProcessRegressor(kernel=k, random_state=6534, normalize_y=True)
+    gpr1[i].fit(polyX, polyY1)
     
     gpr2[i] = gaussian_process.GaussianProcessRegressor(kernel=k, random_state=6534, normalize_y=True)
     gpr2[i].fit(polyX, polyY2)
@@ -163,13 +170,13 @@ kernelnames = ['linear+rbf',
                'poly2+rbf', 
                'poly3+rbf', 
                'rbf+rbf']
-i=3
-model = gpr[i]
+i=0
+model = gpr1[i]
 
 model2 = gpr2[i]
 
 X = polyX
-Y = polyY
+Y1 = polyY1
 Y2 = polyY2
 numx = 150
 xr = linspace(naxbox2[0], naxbox2[1], numx)
@@ -198,19 +205,24 @@ if hasstd:
     plt.fill_between(xr, Ypred2 - 2*Ystd2, Ypred2 + 2*Ystd2,
                  alpha=0.1, color='g')
 
-plt.plot(plotx_list, Y, 'b.')
+#plt.plot(plotx_list, Y1, 'b.')
 plt.plot(xr, Ypred, 'r-')
-plt.plot(plotx_list, Y2, 'b.')
+#plt.plot(plotx_list, Y2, 'b.')
 plt.plot(xr, Ypred2, 'r-')
 plt.axis(naxbox2)
-plt.plot(plotx_list, data_aes['bitrate'], label='AES-128', marker='*')
-plt.plot(plotx_list, data_chacha['bitrate'], label='Chacha20', marker='s')
-plt.title('Performance Comparison Between ChaCha20 and AES-128 by $iperf3$')
+plt.plot(plotx_list, polyY1, label='Alice', marker='*')
+#plt.plot(xq, vq1_alice, ':.')
+plt.plot(xq, alice_afterfilter,label='Alice-SG',marker = 'o')
+
+plt.plot(plotx_list, polyY2, label='Bob', marker='s')
+#plt.plot(xq2, vq1_bob, ':.')
+plt.plot(xq2, bob_afterfilter, label='Bob-SG', marker='v')
+
+plt.title('Alice and Bob Signal Analyst')
 plt.legend()
 plt.xticks(rotation=45)  # Rotate x-axis labels for better readability
 plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True, prune='both', nbins=8))
-plt.xlabel('Timeline')
-plt.ylabel('$Bitrate(Mbits/sec)$')
+plt.ylabel('$RSSI(dBm)$')
 # Display the plot
 plt.grid(True)
 plt.tight_layout()

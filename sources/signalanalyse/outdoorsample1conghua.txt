@@ -1,0 +1,426 @@
+Sending SYN 1141
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1141
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 3
+Message length: 3
+Alice's RSSI: -86
+Bob's RSSI: -80
+Snr: -8.25
+
+68
+68
+Sending SYN 1142
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1142
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 4
+Message length: 3
+Alice's RSSI: -80
+Bob's RSSI: -85
+Snr: -1.25
+
+68
+68
+Sending SYN 1143
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1143
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 5
+Message length: 3
+Alice's RSSI: -79
+Bob's RSSI: -86
+Snr: -3.75
+
+68
+68
+Sending SYN 1144
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1144
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 6
+Message length: 3
+Alice's RSSI: -83
+Bob's RSSI: -84
+Snr: -2.75
+
+68
+68
+Sending SYN 1145
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1145
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 7
+Message length: 3
+Alice's RSSI: -80
+Bob's RSSI: -86
+Snr: -0.75
+
+68
+68
+Sending SYN 1146
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1146
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 8
+Message length: 3
+Alice's RSSI: -81
+Bob's RSSI: -86
+Snr: 1.25
+
+68
+68
+Sending SYN 1147
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1147
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 9
+Message length: 3
+Alice's RSSI: -79
+Bob's RSSI: -84
+Snr: 0.50
+
+68
+68
+Sending SYN 1148
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1148
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 10
+Message length: 3
+Alice's RSSI: -75
+Bob's RSSI: -83
+Snr: 3.00
+
+68
+68
+Sending SYN 1149
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1149
+68
+68
+Sending SYN 1150
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1150
+68
+68
+Sending SYN 1151
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1151
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 11
+Message length: 3
+Alice's RSSI: -81
+Bob's RSSI: -87
+Snr: -0.50
+
+68
+68
+Sending SYN 1152
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1152
+68
+68
+Sending SYN 1153
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1153
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 12
+Message length: 3
+Alice's RSSI: -81
+Bob's RSSI: -85
+Snr: -1.00
+
+68
+68
+Sending SYN 1154
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1154
+68
+68
+Sending SYN 1155
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1155
+68
+68
+Sending SYN 1156
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1156
+68
+68
+Sending SYN 1157
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1157
+68
+68
+Sending SYN 1158
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1158
+68
+68
+Sending SYN 1159
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1159
+68
+68
+Sending SYN 1160
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1160
+68
+68
+Sending SYN 1161
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1161
+68
+68
+Sending SYN 1162
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1162
+68
+68
+Sending SYN 1163
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1163
+68
+68
+Sending SYN 1164
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1164
+68
+68
+Sending SYN 1165
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1165
+68
+68
+Sending SYN 1166
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1166
+68
+68
+Sending SYN 1167
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1167
+68
+68
+Sending SYN 1168
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1168
+68
+68
+Sending SYN 1169
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1169
+68
+68
+Sending SYN 1170
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1170
+68
+68
+Sending SYN 1171
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1171
+68
+68
+Sending SYN 1172
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1172
+68
+68
+Sending SYN 1173
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1173
+68
+68
+Sending SYN 1174
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1174
+68
+68
+Sending SYN 1175
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1175
+68
+68
+Sending SYN 1176
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1176
+68
+68
+Sending SYN 1177
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1177
+68
+68
+Sending SYN 1178
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1178
+68
+68
+Sending SYN 1179
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1179
+68
+68
+Sending SYN 1180
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1180
+68
+68
+Sending SYN 1181
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1181
+68
+68
+Sending SYN 1182
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1182
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 34
+Message length: 3
+Alice's RSSI: -97
+Bob's RSSI: -79
+Snr: -8.25
+
+68
+68
+Sending SYN 1183
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1183
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 35
+Message length: 3
+Alice's RSSI: -87
+Bob's RSSI: -95
+Snr: -2.50
+
+68
+68
+Sending SYN 1184
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1184
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 36
+Message length: 3
+Alice's RSSI: -70
+Bob's RSSI: -78
+Snr: 6.25
+
+68
+68
+Sending SYN 1185
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1185
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 37
+Message length: 3
+Alice's RSSI: -85
+Bob's RSSI: -84
+Snr: -4.25
+
+68
+68
+Sending SYN 1186
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1186
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 38
+Message length: 3
+Alice's RSSI: -79
+Bob's RSSI: -82
+Snr: 0.00
+
+68
+68
+Sending SYN 1187
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1187
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 39
+Message length: 3
+Alice's RSSI: -80
+Bob's RSSI: -88
+Snr: -3.50
+
+68
+68
+Sending SYN 1188
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1188
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 40
+Message length: 3
+Alice's RSSI: -88
+Bob's RSSI: -86
+Snr: -4.00
+
+68
+68
+Sending SYN 1189
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1189
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 41
+Message length: 3
+Alice's RSSI: -73
+Bob's RSSI: -82
+Snr: -2.75
+
+68
+68
+Sending SYN 1190
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1190
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 42
+Message length: 3
+Alice's RSSI: -47
+Bob's RSSI: -57
+Snr: 9.00
+
+68
+68
+Sending SYN 1191
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1191
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 43
+Message length: 3
+Alice's RSSI: -57
+Bob's RSSI: -68
+Snr: 8.50
+
+68
+68
+Sending SYN 1192
+PM2.5: 30|PM10: 35|SO2: 8|NO2: 25
+Sending SYN 1192
+Received from: 0xbb
+Sent to: 0xaa
+Message ID: 44
+Message length: 3
+Alice's RSSI: -56
+Bob's RSSI: -61
+Snr: 7.75
+
