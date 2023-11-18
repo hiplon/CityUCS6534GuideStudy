@@ -78,7 +78,14 @@ The code also incorporates visualizations using Matplotlib to illustrate the imp
 In Figure \ref{physicalkeygen}, the key generation results incorporating multilevel quantization and error correction are illustrated. The figure demonstrates that both Alice and Bob generated a key through multilevel quantization. However, prior to error correction, the bit keys they generated were not identical. After Alice applied error correction, they successfully obtained the same key.
 
 \subsection{Data Encrypt and Decrypt}
-After the key has been generated, it can be utilized in conjunction with encryption algorithms to secure data for transmission. This section focuses on the application of the previously mentioned Chacha20 algorithm to encrypt data transmission. As depicted in Figure \ref{Data Encrypt and Decrypt}, Alice sends emulated environmental monitoring data to Bob. Before transmitting the data, the Chacha20 algorithm is applied. Despite the broadcast nature of the data transmission, recipients without the key will only receive encrypted raw buffer of the data. Bob, possessing the same key as Alice, can perform the Chacha20 decryption on his device, thus obtaining the original message.
+After the key has been generated, it can be utilized in conjunction with encryption algorithms to secure data for transmission. 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.3\linewidth]{ChaChaCipher.png}
+  \caption{The ChaCha quarter-round function}
+  \label{ChaChaCipher}
+\end{figure}
+This section focuses on the application of the previously mentioned Chacha20 algorithm, Figure \ref{ChaChaCipher}\cite{wiki:Chacha20}, to encrypt data transmission. As depicted in Figure \ref{Data Encrypt and Decrypt}, Alice sends emulated environmental monitoring data to Bob. Before transmitting the data, the Chacha20 algorithm is applied. Despite the broadcast nature of the data transmission, recipients without the key will only receive encrypted raw keystream of the data. Bob, possessing the same key as Alice, can perform the Chacha20 decryption on his device, thus obtaining the original message.
 
 \begin{figure}
   \centering
@@ -111,10 +118,16 @@ Furthermore, the application of the SvGOL filter to this signal evidently has an
 The efficacy of an RSSI-based physical layer key generation algorithm is contingent on its ability to accurately capture trends and minimize the influence of outliers in the key generation process. In the context of the IoT domain, factors such as speed, accuracy, and ease of implementation also merit thorough consideration when evaluating the overall effectiveness of the algorithm.
 
 \subsection{Key Generation Analysis}
-This section analysis the performance of LoRa-Key physical layer key generation under different parameters.
+The performance of physical layer key generation by using LoRa-Key under varying parameters are analyzed in this part.
 \begin{figure}
   \centering
   \includegraphics[width=0.8\linewidth]{keygenanalyst.png}
   \caption{Key Generation Analysis}
   \label{keygenanalyst}
 \end{figure}
+As depicted in Figure \ref{keygenanalyst} and Formula \ref{alphaquan}, various \(\alpha\) values denote the guard band to data ratio, representing the excluded measurements in all the guard bands over the total measurements. A noticeable improvement in the bit agreement rate is observed after the implementation of the reconciliation technique, with the key agreement rate reaching 100$\%$ when \(\alpha\) rises to 1. 
+\begin{equation} \int _{q_{i-1}}^{q_{i}-g_{i}} f_{a}da = \frac {1 - \alpha }{m}\quad \int _{q_{i}-g_{i}}^{q_{i}} f_{a}da = \frac {\alpha }{m - 1} {\ } where {\ } 1\leq i\leq {m−1}\label{alphaquan}\end{equation} 
+The figures also reveal that the impact of reconciliation is consistent across different modes, underscoring the effectiveness and robustness of LoRa-Key in diverse environments.
+
+\section{Summary}
+Overall, the work presented in this implementation provides a solid foundation for the implementation and performance analysis of a RSSI-based physical key generation and LoRa-based encrypted communication system. The results and insights gained from real-world tests and analytical assessments contribute to the understanding of the system's capabilities and limitations, paving the way for further refinement and optimization.
