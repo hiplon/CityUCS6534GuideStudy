@@ -172,7 +172,7 @@ kernelnames = ['linear+rbf',
                'poly2+rbf', 
                'poly3+rbf', 
                'rbf+rbf']
-i=0
+i=3
 model = gpr1[i]
 
 model2 = gpr2[i]

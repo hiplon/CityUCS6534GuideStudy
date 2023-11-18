@@ -26,11 +26,13 @@ from scipy.signal import savgol_filter
 import matplotlib.pyplot as plt
 
 
-keylen = 4
+keylen = 3
 
-callen = 6
+callen = 7
 
 listlen = keylen * callen
+
+naxbox2 = [0, listlen*1.1, -105, -45]
 
 # read the RSSI pair
 with open('outdoorsample1conghua.txt', 'r') as file:
@@ -122,7 +124,7 @@ print(len(alice_afterfilter))
 print(len(bob_afterfilter))
 
 
-naxbox2 = [0, listlen*1.1, -55, -15]
+
 
 plotx_list = pd.Series(range(1, listlen+1)).tolist()
 
@@ -172,7 +174,7 @@ kernelnames = ['linear+rbf',
                'poly2+rbf', 
                'poly3+rbf', 
                'rbf+rbf']
-i=0
+i=3
 model = gpr1[i]
 
 model2 = gpr2[i]

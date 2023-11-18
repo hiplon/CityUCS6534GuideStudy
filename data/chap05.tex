@@ -42,7 +42,7 @@ Meanwhile, Figure \ref{panyutest} represents an outdoor test conducted at the ce
   \subcaptionbox{Panyu out door test\label{panyutest}}
   {\includegraphics[width=0.3\linewidth]{panyuhighereducationmegacenter.jpg}}
   \subcaptionbox{Near instruments test\label{neartheinstruments}}
-  {\includegraphics[width=0.3\linewidth]{neartheinstruments.jpg}}
+  {\includegraphics[width=0.293\linewidth]{neartheinstruments.jpg}}
   \subcaptionbox{In building test\label{inbuildingtest}}
   {\includegraphics[width=0.3\linewidth]{inbuildingtest.jpg}}
   \caption{Deep-in-Building and Outdoor Test}\label{Test}
@@ -75,10 +75,10 @@ The code also incorporates visualizations using Matplotlib to illustrate the imp
   \label{physicalkeygen}
 \end{figure}
 
-Figure \ref{physicalkeygen} illustrated the Key generation results with the multilevel quantization and error correction.
+In Figure \ref{physicalkeygen}, the key generation results incorporating multilevel quantization and error correction are illustrated. The figure demonstrates that both Alice and Bob generated a key through multilevel quantization. However, prior to error correction, the bit keys they generated were not identical. After Alice applied error correction, they successfully obtained the same key.
 
 \subsection{Data Encrypt and Decrypt}
-Once the key has been generated, it can be employed alongside encryption algorithms to secure the data for transmission.
+After the key has been generated, it can be utilized in conjunction with encryption algorithms to secure data for transmission. This section focuses on the application of the previously mentioned Chacha20 algorithm to encrypt data transmission. As depicted in Figure \ref{Data Encrypt and Decrypt}, Alice sends emulated environmental monitoring data to Bob. Before transmitting the data, the Chacha20 algorithm is applied. Despite the broadcast nature of the data transmission, recipients without the key will only receive encrypted raw buffer of the data. Bob, possessing the same key as Alice, can perform the Chacha20 decryption on his device, thus obtaining the original message.
 
 \begin{figure}
   \centering
@@ -90,4 +90,31 @@ Once the key has been generated, it can be employed alongside encryption algorit
 \end{figure}
 
 \section{Performance Analysis}
-In this section, performance tests on password generation were implemented based on references, exploring the impact of different parameters. Additionally, the results were visualized for better comprehension of the test data.
+In this section, an analysis of sampling and performance tests, as well as an examination of password generation, were conducted based on references. The objective was to explore the impact of various parameters. Moreover, the results were visualized to enhance the understanding of the test data.
+
+\subsection{Sampling Analysis}
+I conducted an analysis of data derived from multiple RSSI sampling scenarios, which involved comparing data before and after interpolation, applying the SvGOL low-pass filter, and utilizing machine learning algorithms such as linear regression and Gaussian-distributed RBF regression. The Figure \ref{Sampling Data Analysis} illustrates that Alice and Bob can achieve consistent RSSI trends across various scenarios with an ample number of samples. However, it is noteworthy that they exhibit sensitivity to outliers in the data.
+
+Furthermore, the application of the SvGOL filter to this signal evidently has an impact on mitigating the influence of outliers on the regression. These findings align with results from relevant cited studies and support the conjectures made in previous papers on this subject.
+\begin{figure}
+  \centering
+  \subcaptionbox{conghuaanalystlr\label{conghuaanalystlr}}
+  {\includegraphics[width=0.45\linewidth]{conghuaanalystlr.png}}
+  \subcaptionbox{conghuaanalystrbf\label{conghuaanalystrbf}}
+  {\includegraphics[width=0.45\linewidth]{conghuaanalystrbf.png}}
+  \subcaptionbox{neartestanalystlr\label{neartestanalystlr}}
+  {\includegraphics[width=0.45\linewidth]{neartestanalystlr.png}}
+  \subcaptionbox{neartestanalystrbf\label{neartestanalystrbf}}
+  {\includegraphics[width=0.45\linewidth]{neartestanalystrbf.png}}
+  \caption{Sampling Data Analysis}\label{Sampling Data Analysis}
+\end{figure}
+The efficacy of an RSSI-based physical layer key generation algorithm is contingent on its ability to accurately capture trends and minimize the influence of outliers in the key generation process. In the context of the IoT domain, factors such as speed, accuracy, and ease of implementation also merit thorough consideration when evaluating the overall effectiveness of the algorithm.
+
+\subsection{Key Generation Analysis}
+This section analysis the performance of LoRa-Key physical layer key generation under different parameters.
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\linewidth]{keygenanalyst.png}
+  \caption{Key Generation Analysis}
+  \label{keygenanalyst}
+\end{figure}
