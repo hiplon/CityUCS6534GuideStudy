@@ -13,3 +13,16 @@ FinalReportCS.bbl
 FinalReportCS.blg
 thuthesis.cls
 *.log
+Presentation/*.pdf
+Presentation/*.log
+Presentation/*.aux
+Presentation/*.out
+Presentation/*.synctex.gz
+Presentation/*.bbl
+Presentation/*.nav
+Presentation/*.fdb_latexmk
+Presentation/*.snm
+Presentation/*.toc
+Presentation/*.fls
+Presentation/*.blg
+!Presentation/cityulogo.pdf

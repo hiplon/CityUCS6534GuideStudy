@@ -43,9 +43,9 @@ Both of these algorithms have their own advantages and disadvantages. The advant
       
       \Function{loop}{}
           \If{$\text{millis()} - \text{lastSendTime} > \text{interval}$}
-              \State $message \gets \text{"SEQ"} \gets n$
+              \State $message \gets \text{``SEQ"} \gets n$
               \State \Call{sendMessage}{$message$}
-              \State \textbf{print} "Sending" $+$ $message$
+              \State \textbf{print} ``Sending" $+$ $message$
               \State $lastSendTime \gets \text{millis()}$
               \State $interval \gets \text{random}(2000) + 1000$ \Comment{2-3 seconds}
           \EndIf
@@ -82,12 +82,12 @@ The sendMessage algorithm encapsulates a message for LoRa communication. It cons
             \EndWhile
             
             \If{$\text{incomingLength} \neq \text{incoming.length()}$}
-                \State \textbf{print} "error: message length does not match length"
+                \State \textbf{print} ``error: message length does not match length"
                 \State \textbf{return}
             \EndIf
             
             \If{$recipient \neq \text{localAddress} \land recipient \neq 0xFF$}
-                \State \textbf{print} "This message is not for me."
+                \State \textbf{print} ``This message is not for me."
                 \State \textbf{return}
             \EndIf
             
