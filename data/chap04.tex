@@ -220,7 +220,7 @@ where \(S_j = \sum_{i=1}^{n} x_i^j\). The solution to this system provides the c
 
 The function uses M-ary quantization to represent the input samples with a specified number of bits per sample, considering guard bands to reduce quantization errors. The resulting bit string can be used for further processing or transmission.
 
-\textbf{Reconciliation:} Alice and Bob use a CS-based reconciliation method to correct the bit mismatches between their bit strings.
+\textbf{Reconciliation:} Alice use a CS-based reconciliation method to correct the bit mismatches between their bit strings.
 \begin{algorithm}[hbt!]
   \caption{Reconciliation Algorithm}\label{alg:Reconciliation}
   \begin{algorithmic}
@@ -232,7 +232,7 @@ The function uses M-ary quantization to represent the input samples with a speci
           \State $\text{lambda\_max\_idx} \gets \text{argmax}(|\text{c}|)$
           \State $\text{lambda\_max} \gets |\text{c}[\text{lambda\_max\_idx}]|$
   
-          \State $\text{act\_set} \gets \text{where}(|\text{c} - \text{lambda\_max}| < 1e-5)$
+          \State $\text{act\_set} \gets \text{where}(|\text{c} - \text{lambda\_max}| < 10^{-5})$
   
           \State $\text{state} \gets \text{zeros vector of size } m$
           \State $\text{state}[\text{act\_set}] \gets 1$
@@ -260,7 +260,7 @@ The function uses M-ary quantization to represent the input samples with a speci
   
           \State $x[\text{act\_set}] \gets x[\text{act\_set}] + (\text{gamma} \cdot d)[0]$
   
-          \If{$\|y - A \cdot x\|_2 < 1e-6$}
+          \If{$\|y - A \cdot x\|_2 < 10^{-6}$}
               \State \textbf{break}
           \EndIf
       \EndFor
@@ -269,13 +269,13 @@ The function uses M-ary quantization to represent the input samples with a speci
   \EndFunction
   \end{algorithmic}
   \end{algorithm}
-The Reconciliation algorithm is commonly used for solving sparse linear regression problems, where the \(l1\) regularization encourages sparsity in the solution. The function iteratively refines the solution by updating the active set and adjusting the solution vector based on the direction and step size. The algorithm terminates when the convergence criterion is satisfied or after a specified number of iterations.
-The algorithm then computes the active set, which is the set of indices of the elements in the solution that have the largest residual correlations. The active set is computed by finding the elements in the solution that have a residual correlation that is within \(1e^{-5}\) of the maximum residual correlation.
+The Reconciliation algorithm is commonly used for solving sparse linear regression problems, where the \ell\(1\) regularization encourages sparsity in the solution. The function iteratively refines the solution by updating the active set and adjusting the solution vector based on the direction and step size. The algorithm terminates when the convergence criterion is satisfied or after a specified number of iterations.
+The algorithm then computes the active set, which is the set of indices of the elements in the solution that have the largest residual correlations. The active set is computed by finding the elements in the solution that have a residual correlation that is within \(10^{-5}\) of the maximum residual correlation.
 After Reconciliation, performs computing the bitwise exclusive-Or (XOR) of two binary arrays, \textbf{bits\_a} (Bits of Alice after Quantization) and mismatch, and then casting the result to an integer array. This is a useful operation for error correction, as it can be used to recover the original bits from a corrupted set of bits, provided that the number of errors is less than half the number of bits. 
   \[
   \text{{bits\_recover}} = \text{{np.logical\_xor}}(\textbf{\framebox[1.1\width]{{bits\_a}}}, \text{{mismatch}}.\text{{reshape}}(\text{{len}}(\text{{mismatch}}))).\text{{astype(int)}}
   \]
-\textbf{Key Extraction:} Alice and Bob extract a secure key from the reconciled bit strings using a shared secret key or a one-way hash function. Considering that the computing power of LoRa nodes is limited, especially in the case of IoT nodes without AES hardware acceleration, ChaCha20(RFC 7539)\cite{rfc7539}, a symmetric encryption algorithm that is more suitable for embedded hardware, is chosen here. ChaCha20 has a simpler process than the traditional AES algorithm and has achieved better performance such that in the absence of a dedicated accelerator\cite{7507408,7927078}.
+\textbf{Privacy Amplification:} Alice and Bob extract a secure key from the reconciled bit strings using a shared secret key or a one-way hash function. Considering that the computing power of LoRa nodes is limited, especially in the case of IoT nodes without AES hardware acceleration, ChaCha20(RFC 7539)\cite{rfc7539}, a symmetric encryption algorithm that is more suitable for embedded hardware, is chosen here. ChaCha20 has a simpler process than the traditional AES algorithm and has achieved better performance such that in the absence of a dedicated accelerator\cite{7507408,7927078}.
 \begin{table}
     \centering
     \caption{Key Differences Between ChaCha20 and AES-128}
