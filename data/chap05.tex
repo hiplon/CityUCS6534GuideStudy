@@ -100,18 +100,18 @@ This section focuses on the application of the previously mentioned Chacha20 alg
 In this section, an analysis of sampling and performance tests, as well as an examination of password generation, were conducted based on references. The objective was to explore the impact of various parameters. Moreover, the results were visualized to enhance the understanding of the test data.
 
 \subsection{Sampling Analysis}
-I conducted an analysis of data derived from multiple RSSI sampling scenarios, which involved comparing data before and after interpolation, applying the SvGOL low-pass filter, and utilizing machine learning algorithms such as linear regression and Gaussian-distributed RBF regression. The Figure \ref{Sampling Data Analysis} illustrates that Alice and Bob can achieve consistent RSSI trends across various scenarios with an ample number of samples. However, it is noteworthy that they exhibit sensitivity to outliers in the data.
+I conducted an analysis of data derived from multiple RSSI sampling scenarios, which involved comparing data before and after interpolation, applying the SvGOL low-pass filter, and utilizing machine learning algorithms such as linear regression(LR) and Gaussian-distributed RBF regression. The Figure \ref{Sampling Data Analysis} illustrates that Alice and Bob can achieve consistent RSSI trends across various scenarios with an ample number of samples. However, it is noteworthy that they exhibit sensitivity to outliers in the data.
 
 Furthermore, the application of the SvGOL filter to this signal evidently has an impact on mitigating the influence of outliers on the regression. These findings align with results from relevant cited studies and support the conjectures made in previous papers on this subject.
 \begin{figure}
   \centering
-  \subcaptionbox{conghuaanalystlr\label{conghuaanalystlr}}
+  \subcaptionbox{LR - Conghua\label{conghuaanalystlr}}
   {\includegraphics[width=0.45\linewidth]{conghuaanalystlr.png}}
-  \subcaptionbox{conghuaanalystrbf\label{conghuaanalystrbf}}
+  \subcaptionbox{RBF - Conghua\label{conghuaanalystrbf}}
   {\includegraphics[width=0.45\linewidth]{conghuaanalystrbf.png}}
-  \subcaptionbox{neartestanalystlr\label{neartestanalystlr}}
+  \subcaptionbox{LR - Near Instruments\label{neartestanalystlr}}
   {\includegraphics[width=0.45\linewidth]{neartestanalystlr.png}}
-  \subcaptionbox{neartestanalystrbf\label{neartestanalystrbf}}
+  \subcaptionbox{RBF - Near Instruments\label{neartestanalystrbf}}
   {\includegraphics[width=0.45\linewidth]{neartestanalystrbf.png}}
   \caption{Sampling Data Analysis}\label{Sampling Data Analysis}
 \end{figure}
