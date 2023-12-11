@@ -7,6 +7,17 @@
 %\usetheme{Berlin}
 \usecolortheme{default}
 
+\definecolor{myNewColorA}{RGB}{126,12,110}
+\definecolor{myNewColorB}{RGB}{168, 50, 101}
+\definecolor{myNewColorC}{RGB}{168, 50, 137}
+\setbeamercolor*{palette primary}{bg=myNewColorC, fg = white}
+\setbeamercolor*{palette secondary}{bg=myNewColorB, fg = white}
+\setbeamercolor*{palette tertiary}{bg=myNewColorA, fg = white}
+\setbeamercolor*{title}{bg=myNewColorA, fg = white}
+\setbeamercolor*{item}{fg=myNewColorA}
+\setbeamercolor*{caption name}{fg=myNewColorA}
+%\usefonttheme{structuresmallcapsserif}
+
 %------------------------------------------------------------
 %This block of code defines the information to appear in the
 %Title page
@@ -25,6 +36,11 @@
 
   {Professor XU Weitao}
   \and
+  {2$^{nd}$ Reader:}
+
+  {Professor HANCKE Gerhard}
+  \\
+  \vspace{1.5em}
   Department of Computer Science\\
   City University of Hong Kong
   
@@ -71,7 +87,20 @@
 
 
 \section{Introduction}
+\begin{frame}
+  \frametitle{Introduction}
+\textbf{Rapid Growing of IoT Market:}
 
+According to Gartner\cite{gartnerresearchiot}, there will be over 43 billion IoT devices connected to the internet by 2023, and the IoT market size will reach US\$1.4 trillion. The rapid development of the IoT is mainly due to the following trends. Also, the MIIT suggests that the IoT is a future development trend that will have a profound impact on all industries\cite{iot13th5yr}. 
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\linewidth]{figures/iotgrowing.png}
+  \caption{IoT Growing\cite{Dahlqvist_Patel_Rajko_Shulman_2019}}
+  \label{fig:iotgrowing}
+\end{figure}
+
+\end{frame}
 %---------------------------------------------------------
 %Changing visivility of the text
 \begin{frame}
@@ -97,20 +126,7 @@ OK?
 \vspace{0.05in}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Introduction}
-\textbf{Rapid Growing of IoT Market:}
 
-According to Gartner\cite{gartnerresearchiot}, there will be over 43 billion IoT devices connected to the internet by 2023, and the IoT market size will reach US\$1.4 trillion. The rapid development of the IoT is mainly due to the following trends. Also, the MIIT suggests that the IoT is a future development trend that will have a profound impact on all industries\cite{iot13th5yr}. 
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.7\linewidth]{figures/iotgrowing.png}
-  \caption{IoT Growing\cite{Dahlqvist_Patel_Rajko_Shulman_2019}}
-  \label{fig:iotgrowing}
-\end{figure}
-
-\end{frame}
 
 %---------------------------------------------------------
 

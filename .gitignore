@@ -12,6 +12,7 @@ FinalReportCS.xdv
 FinalReportCS.bbl
 FinalReportCS.blg
 thuthesis.cls
+*.pdf
 *.log
 Presentation/*.pdf
 Presentation/*.log
